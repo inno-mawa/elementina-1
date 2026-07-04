@@ -195,7 +195,9 @@ function SelectionScreen({ onSelect, onTap }) {
         <header className="selection-header">
           <div className="status-pill">Element Hotline</div>
           <h1>Wen möchtest du anrufen?</h1>
-          <p>Tippe auf ein Element und stelle deine Fragen im Live-Interview.</p>
+          {tab === "call" ? (
+            <p>Tippe auf ein Element und stelle deine Fragen im Live-Interview.</p>
+          ) : null}
         </header>
 
         {tab === "call" ? (

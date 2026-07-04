@@ -15,12 +15,26 @@ ehrlich hält.
 
 ## 2026-07-05
 
+- **Rahmen-Proportion gekoppelt (kein Stauchen mehr):** Breite und Höhe des
+  Device-Frames wurden bisher unabhängig gedeckelt, wodurch der Rahmen bei
+  niedrigen/breiten Fenstern unförmig gestaucht wurde. Jetzt über
+  `aspect-ratio: 26/49` fest gekoppelt: max. 520px (bzw. 760px auf großen
+  Displays) wie zuvor, aber bei knapper Höhe schrumpft er proportionstreu weiter.
+  Verifiziert 1920×1080 → 520×980, 1080×1920 → 760×1432, 1200×640 → 319×602
+  (Ratio konstant 0,531).
+- **Inhalt verschwindet sauber in der Tab-Bar:** Der Ausblend-Verlauf liegt jetzt
+  exakt zwischen Ober- und Unterkante der Leiste (`--bar-h`/`--bar-b`), sodass
+  der Inhalt nicht mehr unter der schwebenden Leiste hervorschaut.
+- **„Über"-Seite entschlackt:** Der Unterzeilen-Hinweis „Tippe auf ein Element …"
+  erscheint nur noch im `Anruf`-Tab, nicht auf `Über`.
+- **Weißer Reload-Flash entfernt:** Inline-`<style>` in `index.html` setzt den
+  dunklen Hintergrund (`#030305`) sofort, bevor das CSS-Bundle lädt.
 - **Tab-Bar-Clipping behoben:** Der Auswahl-Inhalt wurde an der Grid-Zeilenkante
   zur Tabbar hart abgeschnitten und ragte neben der schmaleren Pillen-Leiste
   hervor. Die Tabbar schwebt jetzt absolut über der voll-hohen Scrollfläche;
   der Inhalt scrollt hinter ihr durch und blendet über einen unteren
-  `mask-image`-Verlauf weich aus (`--dock-space`/`--dock-fade` pro Breakpoint).
-  Verifiziert bei 390×844 und gerahmt 1280×800. Aktualisiert: **UI-Design**.
+  `mask-image`-Verlauf weich aus. Verifiziert bei 390×844 und gerahmt 1280×800.
+  Aktualisiert: **UI-Design**.
 
 ## 2026-07-04
 

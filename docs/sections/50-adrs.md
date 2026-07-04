@@ -3,7 +3,7 @@ id: adrs
 title: Architekturentscheidungen
 order: 50
 status: current
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/styles.css, src/data.js, index.html
 summary: Die wesentlichen Entscheidungen und ihr Warum, neueste zuerst.
@@ -58,10 +58,17 @@ Scrollbereich als Sicherheitsnetz. Vollbild-Modus für Handys per
 `max-width: 540px` **oder** `max-height: 540px`, eigenes Querformat-Layout,
 `viewport-fit=cover` + `env(safe-area-inset-*)`.
 
+**Entscheidung (Ergänzung 2026-07-05)** — Der Device-Frame im Mockup-Modus hält
+seine Handy-Proportion über `aspect-ratio: 26/49`; Breite und Höhe sind gekoppelt
+(`width: min(92vw, 520px, 94dvh·26/49)`), damit er bei niedrigen/breiten Fenstern
+proportionstreu schrumpft statt gestaucht zu werden. Die frühere unabhängige
+Deckelung von Breite und Höhe hatte den Rahmen verzerrt.
+
 **Konsequenzen** — App ist von ≈320px bis 4K-Vertikal nutzbar, kein
-Clipping/Overlap. Preis: zwei Inhaltsbereiche dürfen auf sehr kleinen Screens
-intern scrollen, und die Identity-Card wird unter 720px Höhe ausgeblendet
-(Name steht ohnehin im Header). Verifiziert an 320–1920 px Breakpoints.
+Clipping/Overlap; der Mockup-Rahmen bleibt in jeder Fenstergröße handyförmig.
+Preis: zwei Inhaltsbereiche dürfen auf sehr kleinen Screens intern scrollen, und
+die Identity-Card wird unter 720px Höhe ausgeblendet (Name steht ohnehin im
+Header). Verifiziert an 320–1920 px Breakpoints.
 
 ## ADR-003: Browser-`speechSynthesis` als optionales, abschaltbares TTS
 

@@ -34,13 +34,15 @@ in `src/data.js` (pro Element). Die wichtigsten:
 | Verbunden-Grün | `#61f083` | Call-Status, Anruf-Button-Verlauf |
 | Hangup-Rot | `#ff6b62 → #ff2f27` | Auflegen-Button |
 | Glass-Fläche | `rgba(18,19,27,.55)` + `blur(24px)` | `.glass`-Panels |
-| Device-Frame-Breite | `min(92vw, 520px)` | zentriertes Mockup (Desktop/Tablet) |
+| Device-Frame | `aspect-ratio: 26/49`, Breite `min(92vw, 520px, 94dvh·26/49)` | proportionstreues Mockup (Desktop/Tablet), 760px auf großen Displays |
 | Schrift | Inter / System-Sans | gesamte UI |
 
 ## Screens & Komponenten
 
 - **SelectionScreen** — Header, Kontaktliste der Personas (`ElementAvatar` +
   Name/Element/Tagline + Anruf-Dot) und iOS-artige Tabbar (`Anruf` / `Über`).
+  Der Unterzeilen-Hinweis („Tippe auf ein Element …") erscheint nur im
+  `Anruf`-Tab; auf `Über` ist er ausgeblendet.
 - **CallingScreen** — animierte Klingel-Ringe um den Avatar, „Wird angerufen…".
 - **FaceTimeScreen** — Header mit Timer und personifiziertem Namen (`name`)
   links, Verbindungs-Status rechts, `SelfView` (Kamera-PiP) darunter (mit
@@ -62,20 +64,22 @@ gestaffelt Dekoratives ausblenden — damit Inhalt und Bedienelemente nie
   die App füllt den Screen (`100dvw`/`100dvh`); Safe-Areas via
   `env(safe-area-inset-*)`. Engere Abstände/Schriftgrößen zusätzlich bei
   `max-width: 380px`.
-- **Desktop/Tablet:** zentriertes Phone-Mockup (`min(92vw, 520px)` breit,
-  `min(94dvh, 980px)` hoch). Beide Auswahl- und FaceTime-Screen scrollen
-  *innerhalb* des Rahmens, sodass alle 12 Personas bzw. lange Antworten + Fragen
-  erreichbar bleiben.
-- **Schwebende Tab-Bar (Auswahlscreen):** Die Tabbar liegt nicht mehr in einer
-  eigenen Grid-Zeile, sondern schwebt absolut über der voll-hohen Scrollfläche
+- **Desktop/Tablet:** zentriertes Phone-Mockup. Breite und Höhe sind über
+  `aspect-ratio: 26/49` (= 520:980) **fest gekoppelt** — der Rahmen wird nie
+  gestaucht. Breite `min(92vw, 520px, 94dvh·26/49)`: maximal 520px, aber sobald
+  das Fenster zu niedrig wird, bindet die Höhe und der Rahmen schrumpft
+  proportionstreu weiter. Beide Screens scrollen *innerhalb* des Rahmens, sodass
+  alle 12 Personas bzw. lange Antworten + Fragen erreichbar bleiben.
+- **Schwebende Tab-Bar (Auswahlscreen):** Die Tabbar liegt nicht in einer eigenen
+  Grid-Zeile, sondern schwebt absolut über der voll-hohen Scrollfläche
   (`.selection-main`). Der Inhalt scrollt *hinter* ihr durch und blendet über
-  einen unteren `mask-image`-Verlauf weich aus (Reservehöhe/Fade als
-  `--dock-space`/`--dock-fade` pro Breakpoint). So verschwindet Inhalt sauber
-  hinter der Leiste, statt an der Zeilenkante hart abgeschnitten neben der
-  schmaleren Pillen-Leiste hervorzustehen.
+  einen `mask-image`-Verlauf **exakt zwischen Ober- und Unterkante der Leiste**
+  aus (Leistenmaße als `--bar-h`/`--bar-b` pro Breakpoint). So verschwindet der
+  Inhalt sauber in der Leiste — er wird weder an der Zeilenkante hart
+  abgeschnitten noch schaut er unter der Leiste wieder hervor.
 - **Große Ausstellungs-/Vertikaldisplays** (`min-height: 1200px` und
-  `min-width: 760px`): größerer Rahmen (`min(82vw, 760px)` × `min(94vh, 1440px)`)
-  und hochskalierte Typo/Karten.
+  `min-width: 760px`): Rahmen bis `min(82vw, 760px, 94vh·26/49)` breit (weiterhin
+  proportionstreu) und hochskalierte Typo/Karten.
 - **FaceTime-Schrumpflogik:** eigene Grid-Zeilen für Avatar-Stage
   (`minmax(0,1fr)`, schrumpft zuerst), Identity-Card, Antwort-Panel und Dock.
   Die Identity-Card liegt in **eigener Zeile** (nicht in der Avatar-Stage), damit

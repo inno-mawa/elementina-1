@@ -84,8 +84,14 @@ button {
    ========================================================= */
 
 .device-frame {
-  width: min(92vw, 520px);
-  height: min(94dvh, 980px);
+  /* Feste Handy-Proportion (520:980 = 26:49): Breite und Höhe sind
+     gekoppelt, damit der Rahmen nie unförmig gestaucht wird. Maximal
+     520px breit (wie zuvor); wird das Fenster niedriger, schrumpft er
+     verhältnis-treu über die Höhe (94dvh), statt gestaucht zu werden. */
+  aspect-ratio: 26 / 49;
+  width: min(92vw, 520px, calc(94dvh * 26 / 49));
+  height: auto;
+  max-height: 94dvh;
   position: relative;
   overflow: hidden;
   border-radius: clamp(36px, 5vw, 58px);
@@ -159,10 +165,10 @@ button {
   display: block;
   position: relative;
   min-height: 0;
-  /* Platz, den die schwebende Tab-Bar unten reserviert, plus die
-     Höhe, über die der Inhalt weich hinter ihr ausblendet. */
-  --dock-space: 116px;
-  --dock-fade: 96px;
+  /* Maße der schwebenden Tab-Bar; daraus leiten sich Padding und der
+     Ausblend-Verlauf der Scrollfläche ab. */
+  --bar-h: 76px;
+  --bar-b: 18px;
   background:
     radial-gradient(circle at 24% 12%, rgba(80, 120, 255, 0.26), transparent 26%),
     radial-gradient(circle at 82% 74%, rgba(240, 192, 32, 0.2), transparent 30%),
@@ -183,15 +189,23 @@ button {
   scrollbar-width: thin;
 
   display: block;
-  padding:
-    max(56px, calc(46px + env(safe-area-inset-top)))
-    26px
-    var(--dock-space);
-  /* Inhalt blendet zum unteren Rand hin aus, statt hart an der
-     Tab-Bar-Kante abgeschnitten zu werden — er verschwindet sauber
-     hinter der schwebenden Leiste. */
-  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--dock-fade)), transparent);
-  mask-image: linear-gradient(to bottom, #000 calc(100% - var(--dock-fade)), transparent);
+  padding-top: max(56px, calc(46px + env(safe-area-inset-top)));
+  padding-inline: 26px;
+  padding-bottom: calc(var(--bar-b) + var(--bar-h) + 22px);
+  /* Der Inhalt blendet exakt zwischen Ober- und Unterkante der Tab-Bar
+     aus: darüber voll sichtbar, an der Unterkante komplett verschwunden.
+     Unter der Leiste bleibt nichts sichtbar — der Inhalt schaut also
+     nicht darunter hervor. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - var(--bar-b) - var(--bar-h)),
+    transparent calc(100% - var(--bar-b))
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 calc(100% - var(--bar-b) - var(--bar-h)),
+    transparent calc(100% - var(--bar-b))
+  );
 }
 
 .selection-header {
@@ -358,8 +372,8 @@ button {
   z-index: 10;
   left: 20px;
   right: 20px;
-  bottom: 18px;
-  height: 76px;
+  bottom: var(--bar-b);
+  height: var(--bar-h);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
@@ -973,10 +987,8 @@ button {
   }
 
   .selection-main {
-    padding:
-      max(68px, calc(52px + env(safe-area-inset-top)))
-      17px
-      var(--dock-space);
+    padding-top: max(68px, calc(52px + env(safe-area-inset-top)));
+    padding-inline: 17px;
   }
 
   .selection-header {
@@ -1037,15 +1049,13 @@ button {
   }
 
   .selection-screen {
-    --dock-space: 96px;
-    --dock-fade: 80px;
+    --bar-h: 66px;
+    --bar-b: max(12px, env(safe-area-inset-bottom));
   }
 
   .tab-bar {
-    height: 66px;
     left: 14px;
     right: 14px;
-    bottom: max(12px, env(safe-area-inset-bottom));
     border-radius: 24px;
   }
 
@@ -1234,15 +1244,12 @@ button {
 
 @media (min-height: 1200px) and (min-width: 760px) {
   .device-frame {
-    width: min(82vw, 760px);
-    height: min(94vh, 1440px);
+    width: min(82vw, 760px, calc(94vh * 26 / 49));
   }
 
   .selection-main {
-    padding:
-      74px
-      42px
-      var(--dock-space);
+    padding-top: 74px;
+    padding-inline: 42px;
   }
 
   .selection-header h1 {
@@ -1285,15 +1292,13 @@ button {
   }
 
   .selection-screen {
-    --dock-space: 140px;
-    --dock-fade: 118px;
+    --bar-h: 90px;
+    --bar-b: 26px;
   }
 
   .tab-bar {
-    height: 90px;
     left: 30px;
     right: 30px;
-    bottom: 26px;
   }
 
   .tab-bar svg {

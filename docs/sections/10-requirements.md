@@ -3,7 +3,7 @@ id: requirements
 title: Anforderungen
 order: 10
 status: current
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/data.js, src/styles.css
 summary: User Stories sowie funktionale und technische Anforderungen des Prototyps.

@@ -3,7 +3,7 @@ id: workflows
 title: Abläufe
 order: 40
 status: current
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/data.js
 summary: Die zentralen End-to-End-Abläufe — Anruf starten und Fragen stellen.

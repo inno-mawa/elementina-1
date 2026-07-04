@@ -3,7 +3,7 @@ id: data-model
 title: Datenmodell
 order: 30
 status: current
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/data.js, src/dialog-overview.json
 summary: Form der In-App-Daten — Personas und ihre sechs frei wählbaren Fragen.

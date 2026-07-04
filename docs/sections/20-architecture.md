@@ -3,7 +3,7 @@ id: architecture
 title: Architektur
 order: 20
 status: current
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/main.jsx, src/data.js, index.html, vite.config.js
 summary: Aufbau der Single-Page-App — Komponentenbaum, Screen-Zustandsmaschine und Web-API-Anbindung.
