@@ -3,7 +3,7 @@ id: ui-design
 title: UI-Design
 order: 60
 status: current
-last_updated: 2026-06-24
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/styles.css, src/App.jsx, src/data.js
 summary: Designsprache (Liquid Glass), Tokens, Screens und das responsive Verhalten.
@@ -46,7 +46,7 @@ in `src/data.js` (pro Element). Die wichtigsten:
   links, Verbindungs-Status rechts, `SelfView` (Kamera-PiP) darunter (mit
   Abstand zum Status-Badge), Avatar-Stage, Identity-Card mit dem **echten
   Elementnamen** (`elementName · element`, z. B. „Gold · Au · 79") in der
-  Element-Farbe über der Tagline, Antwort-Panel, Fragebaum-Dock mit
+  Element-Farbe über der Tagline, Antwort-Panel, Fragen-Dock mit allen sechs
   `LiquidButton`-Kacheln, Voice-Toggle und Auflegen-Button.
 - **ElementAvatar** — prozeduraler „Element-Charakter" (Kopf, Augen, Mund,
   Orbits, Sparks) rein aus CSS; Größe über `--avatar-size`, Mund animiert beim
@@ -66,6 +66,13 @@ gestaffelt Dekoratives ausblenden — damit Inhalt und Bedienelemente nie
   `min(94dvh, 980px)` hoch). Beide Auswahl- und FaceTime-Screen scrollen
   *innerhalb* des Rahmens, sodass alle 12 Personas bzw. lange Antworten + Fragen
   erreichbar bleiben.
+- **Schwebende Tab-Bar (Auswahlscreen):** Die Tabbar liegt nicht mehr in einer
+  eigenen Grid-Zeile, sondern schwebt absolut über der voll-hohen Scrollfläche
+  (`.selection-main`). Der Inhalt scrollt *hinter* ihr durch und blendet über
+  einen unteren `mask-image`-Verlauf weich aus (Reservehöhe/Fade als
+  `--dock-space`/`--dock-fade` pro Breakpoint). So verschwindet Inhalt sauber
+  hinter der Leiste, statt an der Zeilenkante hart abgeschnitten neben der
+  schmaleren Pillen-Leiste hervorzustehen.
 - **Große Ausstellungs-/Vertikaldisplays** (`min-height: 1200px` und
   `min-width: 760px`): größerer Rahmen (`min(82vw, 760px)` × `min(94vh, 1440px)`)
   und hochskalierte Typo/Karten.
@@ -73,8 +80,15 @@ gestaffelt Dekoratives ausblenden — damit Inhalt und Bedienelemente nie
   (`minmax(0,1fr)`, schrumpft zuerst), Identity-Card, Antwort-Panel und Dock.
   Die Identity-Card liegt in **eigener Zeile** (nicht in der Avatar-Stage), damit
   sie beim Schrumpfen nie geclippt wird oder überlappt. Antwort-Panel
-  (`max-height: 40dvh`, auf niedrigen Screens 32/30dvh) und Fragebaum-Dock scrollen
+  (`max-height: 40dvh`, auf niedrigen Screens 32/30dvh) und Fragen-Dock scrollen
   *eingegrenzt* als Sicherheitsnetz.
+- **Avatar skaliert zur Stage, nicht zum Viewport:** Die Avatar-Stage ist ein
+  Size-Container (`container-type: size`); der Hero-Avatar deckelt seine
+  `--avatar-size` per `min(clamp(120px,30vh,330px), 72cqh, 96cqw)`. So schrumpft
+  der Avatar automatisch mit, sobald Header, Identity-Card, Antwort-Panel und der
+  6-Fragen-Dock die Stage zusammendrücken — er wird nie mehr vom
+  `overflow: hidden` der Stage abgeschnitten. `72cqh`, weil die Avatar-Höhe das
+  1,25-fache der Size ist; der `vh`-Clamp bleibt Obergrenze auf großen Displays.
 - **Gestaffeltes Ausblenden bei wenig Platz** (verhindert Überlappungen):
   Identity-Card und Self-View-PiP unter `max-height: 720px` (die absolut
   positionierte PiP würde sonst beim Schrumpfen der Avatar-Zone mit Header
@@ -88,5 +102,5 @@ gestaffelt Dekoratives ausblenden — damit Inhalt und Bedienelemente nie
 - **Verifikation:** Überlappungs-/Clipping-frei per Browser-Preview und
   DOM-Bounding-Box-Check geprüft über 320×568, 375×667, 740×360 (Querformat),
   1024×600, 1280×720, 1366×768 und 1080×1920 — jeweils mit Antwort und allen
-  sichtbaren Fragen. Scroll-Ränder (z. B. Auswahlliste ↔ Tabbar) grenzen exakt
-  aneinander, ohne echte Überlappung.
+  sichtbaren Fragen. Der Auswahl-Inhalt scrollt sauber hinter der schwebenden
+  Tabbar durch (weicher Fade), ohne harte Schnittkante daneben.

@@ -3,7 +3,7 @@ id: overview
 title: Überblick
 order: 0
 status: current
-last_updated: 2026-06-17
+last_updated: 2026-07-01
 owner: @naim
 linked_paths: README.md, package.json, index.html, vite.config.js, src/main.jsx
 summary: Was Element Hotline ist, für wen es gedacht ist und wie man es lokal startet.
@@ -49,7 +49,7 @@ npm run preview      # gebauten Stand lokal testen
 | `index.html` | HTML-Einstieg, Viewport-Meta (mit `viewport-fit=cover`) |
 | `src/main.jsx` | React-Mount-Punkt |
 | `src/App.jsx` | Zustandsmaschine (Selection → Calling → FaceTime) + alle Komponenten, Sound, Kamera, TTS |
-| `src/data.js` | Personas und persona-spezifischer Fragebaum (Intro, Initialfragen, Unlocks) |
+| `src/data.js` | Personas und je sechs frei wählbare Fragen (Intro + Fragen/Antworten) |
 | `src/dialog-overview.json` | Redaktionelle Review-Sicht aller Fragen/Antworten |
 | `src/styles.css` | Liquid-Glass-Look, Device-Frame, gesamtes responsives Layout |
 | `docs/` | Diese keystonedoc-Dokumentation |

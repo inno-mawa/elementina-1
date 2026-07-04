@@ -156,9 +156,13 @@ button {
    ========================================================= */
 
 .selection-screen {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  display: block;
+  position: relative;
   min-height: 0;
+  /* Platz, den die schwebende Tab-Bar unten reserviert, plus die
+     Höhe, über die der Inhalt weich hinter ihr ausblendet. */
+  --dock-space: 116px;
+  --dock-fade: 96px;
   background:
     radial-gradient(circle at 24% 12%, rgba(80, 120, 255, 0.26), transparent 26%),
     radial-gradient(circle at 82% 74%, rgba(240, 192, 32, 0.2), transparent 30%),
@@ -171,6 +175,7 @@ button {
   Kein vertikales Zentrieren, deshalb wird oben nichts mehr abgeschnitten.
 */
 .selection-main {
+  height: 100%;
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
@@ -181,7 +186,12 @@ button {
   padding:
     max(56px, calc(46px + env(safe-area-inset-top)))
     26px
-    24px;
+    var(--dock-space);
+  /* Inhalt blendet zum unteren Rand hin aus, statt hart an der
+     Tab-Bar-Kante abgeschnitten zu werden — er verschwindet sauber
+     hinter der schwebenden Leiste. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - var(--dock-fade)), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - var(--dock-fade)), transparent);
 }
 
 .selection-header {
@@ -344,16 +354,17 @@ button {
    ========================================================= */
 
 .tab-bar {
-  position: relative;
+  position: absolute;
   z-index: 10;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
   height: 76px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin: 0 20px 18px;
   padding: 9px;
   border-radius: 28px;
-  flex-shrink: 0;
 }
 
 .tab-bar button {
@@ -586,6 +597,7 @@ button {
   align-content: center;
   padding-top: 22px;
   overflow: hidden;
+  container-type: size;
 }
 
 .identity-card {
@@ -759,7 +771,10 @@ button {
 }
 
 .avatar-hero {
-  --avatar-size: clamp(130px, 30vh, 330px);
+  /* Deckel: darf nie höher/breiter als die Stage werden (sonst Clipping durch
+     overflow:hidden). Höhe = 1.25×Size, daher 72cqh; Breite = Size, daher 96cqw.
+     Der vh-Clamp bleibt Obergrenze auf großen Screens. */
+  --avatar-size: min(clamp(120px, 30vh, 330px), 72cqh, 96cqw);
 }
 
 .avatar-body {
@@ -961,7 +976,7 @@ button {
     padding:
       max(68px, calc(52px + env(safe-area-inset-top)))
       17px
-      18px;
+      var(--dock-space);
   }
 
   .selection-header {
@@ -1021,12 +1036,16 @@ button {
     height: 21px;
   }
 
+  .selection-screen {
+    --dock-space: 96px;
+    --dock-fade: 80px;
+  }
+
   .tab-bar {
     height: 66px;
-    margin:
-      0
-      14px
-      max(12px, env(safe-area-inset-bottom));
+    left: 14px;
+    right: 14px;
+    bottom: max(12px, env(safe-area-inset-bottom));
     border-radius: 24px;
   }
 
@@ -1140,7 +1159,7 @@ button {
   }
 
   .avatar-hero {
-    --avatar-size: clamp(110px, 25vh, 230px);
+    --avatar-size: min(clamp(100px, 25vh, 230px), 72cqh, 96cqw);
   }
 }
 
@@ -1223,7 +1242,7 @@ button {
     padding:
       74px
       42px
-      28px;
+      var(--dock-space);
   }
 
   .selection-header h1 {
@@ -1265,9 +1284,16 @@ button {
     height: 68px;
   }
 
+  .selection-screen {
+    --dock-space: 140px;
+    --dock-fade: 118px;
+  }
+
   .tab-bar {
     height: 90px;
-    margin: 0 30px 26px;
+    left: 30px;
+    right: 30px;
+    bottom: 26px;
   }
 
   .tab-bar svg {

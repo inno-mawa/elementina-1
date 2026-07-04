@@ -3,7 +3,7 @@ id: adrs
 title: Architekturentscheidungen
 order: 50
 status: current
-last_updated: 2026-06-17
+last_updated: 2026-07-01
 owner: @naim
 linked_paths: src/App.jsx, src/styles.css, src/data.js, index.html
 summary: Die wesentlichen Entscheidungen und ihr Warum, neueste zuerst.
@@ -11,6 +11,32 @@ summary: Die wesentlichen Entscheidungen und ihr Warum, neueste zuerst.
 
 Jede bedeutsame Entscheidung wird einmal festgehalten — das *Warum*, damit sie
 nicht erneut aufgerollt wird. Neueste zuerst.
+
+## ADR-005: Flache 6-Fragen-Liste statt Fragebaum (löst ADR-002 ab)
+
+**Status:** accepted
+
+> [!DECISION] Jede Persona bietet ihre sechs Fragen von Anfang an alle zur
+> Auswahl an. Kein Freischalten, kein Fragebaum.
+
+**Kontext** — Der mit ADR-002 eingeführte Fragebaum (nur zwei Startfragen, der
+Rest wird per `unlocks` nach Antworten eingeblendet) hat sich in der Nutzung als
+zu verschachtelt erwiesen: An einem öffentlichen Touchscreen sollen Besucher:innen
+auf einen Blick sehen, *was* sie ein Element fragen können, und frei springen —
+nicht erst einen Pfad „erspielen". Das widerspricht dem Simplizitäts-Richtwert
+(einfachste Struktur, die das Problem löst).
+
+**Entscheidung** — Der Fragebaum wird entfernt. Pro Persona bleiben
+`introStatement` und `questions` (weiterhin die sechs Fragen `q1…q6`); die Felder
+`initialQuestionIds` und `unlocks` entfallen. `getQuestions()` liefert alle
+Fragen in Definitionsreihenfolge; das Dock rendert sie vollständig. Die Reihenfolge
+`q1…q6` bildet den Bogen Herkunft → Abbau → Smartphone → Umwelt → Menschen →
+Danach.
+
+**Konsequenzen** — Einfacheres Datenmodell und weniger Zustand im UI
+(`visibleQuestionIds` entfällt). Alle Fragen sind sofort erreichbar, keine
+geführte Dramaturgie mehr — für ein Ausstellungsexponat der bewusst gewählte
+Kompromiss. Ersetzt ADR-002.
 
 ## ADR-004: Fluides, gerätegnostisches Layout statt Fix-auf-1920×1080
 
@@ -22,12 +48,12 @@ nicht erneut aufgerollt wird. Neueste zuerst.
 
 **Kontext** — Ursprünglich war alles auf 1920×1080 optimiert. Eine erzwungene
 `min-height: 720px` am Device-Frame plus `overflow: hidden` führten auf kleinen
-und quer gehaltenen Geräten zu Abschneiden: der wachsende Fragebaum (bis 6
-Kacheln) und der Auflegen-Button wurden geclippt, ohne Scroll.
+und quer gehaltenen Geräten zu Abschneiden: die sechs Fragekacheln und der
+Auflegen-Button wurden geclippt, ohne Scroll.
 
 **Entscheidung** — Feste Mindesthöhe entfernt, durchgehend `dvh`. Im
 FaceTime-Screen ist die Avatar-Stage die flexible Schrumpfzone (`minmax(0,1fr)`
-+ `clamp`); Antwort-Panel und Fragebaum-Dock bekommen je einen *eingegrenzten*
++ `clamp`); Antwort-Panel und Fragen-Dock bekommen je einen *eingegrenzten*
 Scrollbereich als Sicherheitsnetz. Vollbild-Modus für Handys per
 `max-width: 540px` **oder** `max-height: 540px`, eigenes Querformat-Layout,
 `viewport-fit=cover` + `env(safe-area-inset-*)`.
@@ -57,7 +83,7 @@ eine spätere Iteration und kann hinter `useSpeech` ausgetauscht werden.
 
 ## ADR-002: Persona-spezifischer Fragebaum mit `unlocks`
 
-**Status:** accepted
+**Status:** superseded — ersetzt durch [ADR-005](#adrs)
 
 > [!DECISION] Statt einer flachen Fragenliste hat jede Persona einen eigenen
 > Fragebaum; Antworten schalten Folgefragen frei.
@@ -71,7 +97,8 @@ eingeblendet (siehe [Datenmodell](#data-model)).
 
 **Konsequenzen** — Skaliert für weitere Personas, ermöglicht geführte
 Erzählung, macht redaktionelle Pflege eindeutig. Etwas mehr Datenstruktur als
-eine flache Liste.
+eine flache Liste. *In der Praxis zu verschachtelt für ein Touchscreen-Exponat;
+2026-07-01 durch ADR-005 (flache Liste) abgelöst.*
 
 ## ADR-001: Kein Backend — statische In-App-Daten
 
