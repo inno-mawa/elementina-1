@@ -980,10 +980,14 @@ button {
   }
 
   .device-frame {
+    /* Echtes Vollbild: aspect-ratio und max-height der Basisregel
+       aufheben, sonst bliebe unten ein 6%-Rand (max-height: 94dvh). */
+    aspect-ratio: auto;
     width: 100%;
     width: 100dvw;
     height: 100vh;
     height: 100dvh;
+    max-height: none;
     padding: 0;
     border-radius: 0;
     overflow: hidden;

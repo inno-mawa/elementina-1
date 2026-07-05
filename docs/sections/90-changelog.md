@@ -15,6 +15,11 @@ ehrlich hält.
 
 ## 2026-07-05
 
+- **Schwarzer Balken im Handy-Vollbild behoben:** Das beim Aspect-Ratio-Fix
+  ergänzte `max-height: 94dvh` der Basis-`device-frame`-Regel wirkte auch im
+  Vollbild-Modus (`max-width: 540px`) weiter und ließ unten einen 6%-Rand frei.
+  Im Vollbild werden `aspect-ratio` und `max-height` jetzt explizit aufgehoben
+  (`100dvw × 100dvh`).
 - **Tab-Bar-Ausblendung browserübergreifend gefixt:** Der `mask-image`-Verlauf
   ließ den Inhalt in Firefox unter der Leiste hervorschauen (Firefox positioniert
   die Maske relativ zum gescrollten Inhalt, nicht zum sichtbaren Rahmen). Ersetzt
