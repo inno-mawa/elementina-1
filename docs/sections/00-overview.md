@@ -3,7 +3,7 @@ id: overview
 title: Überblick
 order: 0
 status: current
-last_updated: 2026-07-01
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: README.md, package.json, index.html, vite.config.js, src/main.jsx
 summary: Was Element Hotline ist, für wen es gedacht ist und wie man es lokal startet.

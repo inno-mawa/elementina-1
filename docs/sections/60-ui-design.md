@@ -72,11 +72,15 @@ gestaffelt Dekoratives ausblenden — damit Inhalt und Bedienelemente nie
   alle 12 Personas bzw. lange Antworten + Fragen erreichbar bleiben.
 - **Schwebende Tab-Bar (Auswahlscreen):** Die Tabbar liegt nicht in einer eigenen
   Grid-Zeile, sondern schwebt absolut über der voll-hohen Scrollfläche
-  (`.selection-main`). Der Inhalt scrollt *hinter* ihr durch und blendet über
-  einen `mask-image`-Verlauf **exakt zwischen Ober- und Unterkante der Leiste**
-  aus (Leistenmaße als `--bar-h`/`--bar-b` pro Breakpoint). So verschwindet der
-  Inhalt sauber in der Leiste — er wird weder an der Zeilenkante hart
-  abgeschnitten noch schaut er unter der Leiste wieder hervor.
+  (`.selection-main`). Der Inhalt scrollt *hinter* ihr durch und verschwindet in
+  einem **Verlaufs-Scrim** (`.selection-screen::after`, Hintergrundfarbe
+  `#030305`, `z-index` zwischen Inhalt und Leiste), der den Leistenbereich
+  abdeckt — Höhe aus den Leistenmaßen `--bar-h`/`--bar-b` pro Breakpoint. So wird
+  der Inhalt weder an einer Zeilenkante hart abgeschnitten noch schaut er unter
+  der Leiste hervor. Bewusst ein Overlay statt `mask-image`: Letzteres wird in
+  Firefox relativ zum gescrollten Inhalt statt zum sichtbaren Rahmen positioniert
+  und ließ den Inhalt dort durchscheinen; das Overlay verhält sich in allen
+  Browsern gleich.
 - **Große Ausstellungs-/Vertikaldisplays** (`min-height: 1200px` und
   `min-width: 760px`): Rahmen bis `min(82vw, 760px, 94vh·26/49)` breit (weiterhin
   proportionstreu) und hochskalierte Typo/Karten.

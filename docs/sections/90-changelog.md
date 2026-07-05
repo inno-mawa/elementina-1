@@ -15,6 +15,11 @@ ehrlich hält.
 
 ## 2026-07-05
 
+- **Tab-Bar-Ausblendung browserübergreifend gefixt:** Der `mask-image`-Verlauf
+  ließ den Inhalt in Firefox unter der Leiste hervorschauen (Firefox positioniert
+  die Maske relativ zum gescrollten Inhalt, nicht zum sichtbaren Rahmen). Ersetzt
+  durch einen Verlaufs-Scrim (`.selection-screen::after`) in Hintergrundfarbe, der
+  den Leistenbereich abdeckt — verhält sich in allen Browsern gleich.
 - **Rahmen-Proportion gekoppelt (kein Stauchen mehr):** Breite und Höhe des
   Device-Frames wurden bisher unabhängig gedeckelt, wodurch der Rahmen bei
   niedrigen/breiten Fenstern unförmig gestaucht wurde. Jetzt über

@@ -192,19 +192,30 @@ button {
   padding-top: max(56px, calc(46px + env(safe-area-inset-top)));
   padding-inline: 26px;
   padding-bottom: calc(var(--bar-b) + var(--bar-h) + 22px);
-  /* Der Inhalt blendet exakt zwischen Ober- und Unterkante der Tab-Bar
-     aus: darüber voll sichtbar, an der Unterkante komplett verschwunden.
-     Unter der Leiste bleibt nichts sichtbar — der Inhalt schaut also
-     nicht darunter hervor. */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    #000 calc(100% - var(--bar-b) - var(--bar-h)),
-    transparent calc(100% - var(--bar-b))
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    #000 calc(100% - var(--bar-b) - var(--bar-h)),
-    transparent calc(100% - var(--bar-b))
+}
+
+/*
+  Verlaufs-Scrim in Hintergrundfarbe zwischen Inhalt und Tab-Bar. Er deckt
+  den Bereich der schwebenden Leiste (und darunter) ab, sodass der Inhalt
+  dort sauber verschwindet und nicht unter der Leiste hervorschaut. Bewusst
+  ein Overlay statt `mask-image`: Letzteres wird in Firefox relativ zum
+  gescrollten Inhalt (statt zum sichtbaren Rahmen) positioniert und ließ den
+  Inhalt dort durchscheinen. Ein Overlay verhält sich in allen Browsern gleich.
+*/
+.selection-screen::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(var(--bar-b) + var(--bar-h) + 30px);
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    #030305 0,
+    #030305 calc(100% - 30px),
+    transparent 100%
   );
 }
 
