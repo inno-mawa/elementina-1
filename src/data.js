@@ -2,7 +2,6 @@ export const PERSONAS = [
   {
     id: "goldina",
     name: "Goldina",
-    elementName: "Gold",
     element: "Au · 79",
     role: "Kontakt, SIM, Mikroprozessor",
     tagline: "Das wertvollste Metall der Welt",
@@ -17,7 +16,6 @@ export const PERSONAS = [
   {
     id: "kobaltin",
     name: "Kobaltin",
-    elementName: "Kobalt",
     element: "Co · 27",
     role: "Lithium-Ionen-Akku",
     tagline: "Die Kraft hinter jedem Akku",
@@ -30,753 +28,597 @@ export const PERSONAS = [
     mood: "stark, direkt, kämpferisch",
   },
   {
-    id: "lithium",
+    id: "lithia",
     name: "Lithia",
-    elementName: "Lithium",
     element: "Li · 3",
-    role: "Lithium-Ionen-Akku",
-    tagline: "Leichte Energie für dein Handy",
+    role: "Akku",
+    tagline: "Die Energie im Akku",
     portrait: "Li",
-    color: "#9b7cf4",
-    colorLight: "#c5b4ff",
-    glow: "rgba(155, 124, 244, 0.58)",
-    ink: "#230f5a",
-    bg: "#0a0618",
-    mood: "leicht, energiegeladen, sensibel",
+    color: "#b85cff",
+    colorLight: "#dda8ff",
+    glow: "rgba(184, 92, 255, 0.58)",
+    ink: "#25003d",
+    bg: "#100018",
+    mood: "energiegeladen, neugierig, direkt",
   },
   {
-    id: "indium",
+    id: "indira",
     name: "Indira",
-    elementName: "Indium",
     element: "In · 49",
-    role: "Touchschicht im Display",
-    tagline: "Das unsichtbare Leitmaterial",
+    role: "Touchscreen, Display",
+    tagline: "Die Berührung im Display",
     portrait: "In",
-    color: "#17a7a0",
-    colorLight: "#76e3db",
-    glow: "rgba(23, 167, 160, 0.58)",
-    ink: "#003d39",
-    bg: "#001211",
-    mood: "unsichtbar, präzise, technisch",
+    color: "#2db7a3",
+    colorLight: "#8af2df",
+    glow: "rgba(45, 183, 163, 0.58)",
+    ink: "#003d36",
+    bg: "#021614",
+    mood: "präzise, ruhig, aufmerksam",
   },
   {
-    id: "gallium",
+    id: "gallia",
     name: "Gallia",
-    elementName: "Gallium",
     element: "Ga · 31",
-    role: "Display- und Beleuchtungstechnik",
-    tagline: "Kleines Metall, große Hightech-Rolle",
+    role: "Display, Funkchips, LEDs",
+    tagline: "Das Licht in der Elektronik",
     portrait: "Ga",
-    color: "#62b84f",
-    colorLight: "#b6ef92",
-    glow: "rgba(98, 184, 79, 0.58)",
-    ink: "#173e10",
-    bg: "#071405",
-    mood: "modern, selten, vernetzt",
+    color: "#ff6f61",
+    colorLight: "#ffb1a8",
+    glow: "rgba(255, 111, 97, 0.58)",
+    ink: "#4a0d08",
+    bg: "#1a0504",
+    mood: "hell, clever, schnell",
   },
   {
-    id: "silizium",
+    id: "silico",
     name: "Silico",
-    elementName: "Silizium",
     element: "Si · 14",
-    role: "Kamerasensor und Chips",
-    tagline: "Die Basis fast aller Chips",
+    role: "Chips, Kamera, Sensoren",
+    tagline: "Das Gehirn im Smartphone",
     portrait: "Si",
-    color: "#6d8ea5",
-    colorLight: "#b8d2e5",
-    glow: "rgba(109, 142, 165, 0.58)",
-    ink: "#173145",
-    bg: "#061018",
-    mood: "logisch, ruhig, leistungsstark",
+    color: "#58a6ff",
+    colorLight: "#a9d1ff",
+    glow: "rgba(88, 166, 255, 0.58)",
+    ink: "#06284d",
+    bg: "#020b18",
+    mood: "logisch, konzentriert, sachlich",
   },
   {
-    id: "zinn",
+    id: "zinnia",
     name: "Zinnia",
-    elementName: "Zinn",
     element: "Sn · 50",
-    role: "Lötstellen in der Elektronik",
-    tagline: "Der unsichtbare Verbinder",
+    role: "Lötstellen, Kamera, Platinen",
+    tagline: "Die Verbindung im Inneren",
     portrait: "Sn",
-    color: "#8c98a8",
-    colorLight: "#d5dce5",
-    glow: "rgba(140, 152, 168, 0.58)",
-    ink: "#26303a",
-    bg: "#0a0d10",
-    mood: "verbindend, zuverlässig, unterschätzt",
+    color: "#9aa5b1",
+    colorLight: "#dce3ea",
+    glow: "rgba(154, 165, 177, 0.58)",
+    ink: "#24303b",
+    bg: "#080b10",
+    mood: "verbindend, bodenständig, ehrlich",
   },
   {
-    id: "neodym",
+    id: "neodya",
     name: "Neodya",
-    elementName: "Neodym",
     element: "Nd · 60",
-    role: "Lautsprecher-Magnet",
-    tagline: "Kleine Magnete, großer Klang",
+    role: "Lautsprecher, Vibration, Magnete",
+    tagline: "Die starke Kraft im Kleinen",
     portrait: "Nd",
-    color: "#8a57e8",
-    colorLight: "#c7adff",
-    glow: "rgba(138, 87, 232, 0.58)",
-    ink: "#2b0f62",
-    bg: "#10051f",
-    mood: "kraftvoll, magnetisch, selten",
+    color: "#e84393",
+    colorLight: "#ffadd4",
+    glow: "rgba(232, 67, 147, 0.58)",
+    ink: "#500026",
+    bg: "#18000d",
+    mood: "kraftvoll, magnetisch, dramatisch",
   },
   {
-    id: "dysprosium",
+    id: "dysra",
     name: "Dysra",
-    elementName: "Dysprosium",
     element: "Dy · 66",
-    role: "Hitzestabile Lautsprecher-Magnete",
-    tagline: "Selten, aber für Magnete entscheidend",
+    role: "Hitzefeste Magnete",
+    tagline: "Die Ausdauer der Magnete",
     portrait: "Dy",
-    color: "#cf4cb3",
-    colorLight: "#ffb2ed",
-    glow: "rgba(207, 76, 179, 0.58)",
-    ink: "#5c073f",
-    bg: "#1b0516",
-    mood: "selten, stabil, unverzichtbar",
+    color: "#7a5cff",
+    colorLight: "#c5b7ff",
+    glow: "rgba(122, 92, 255, 0.58)",
+    ink: "#21134d",
+    bg: "#0b061a",
+    mood: "ruhig, widerstandsfähig, ernst",
   },
   {
-    id: "aluminium",
+    id: "alumina",
     name: "Alumina",
-    elementName: "Aluminium",
     element: "Al · 13",
-    role: "Gehäuse und Rahmen",
-    tagline: "Leicht, stabil und gut recycelbar",
+    role: "Gehäuse, Rahmen",
+    tagline: "Das leichte Schutzschild",
     portrait: "Al",
-    color: "#b6bdc8",
-    colorLight: "#eef2f6",
-    glow: "rgba(182, 189, 200, 0.58)",
-    ink: "#303740",
-    bg: "#0c0f12",
-    mood: "leicht, stabil, reflektiert",
+    color: "#c0c7d1",
+    colorLight: "#f2f5f8",
+    glow: "rgba(192, 199, 209, 0.58)",
+    ink: "#303946",
+    bg: "#0a0c10",
+    mood: "leicht, robust, klar",
   },
   {
-    id: "nickel",
+    id: "nickelix",
     name: "Nickelix",
-    elementName: "Nickel",
     element: "Ni · 28",
-    role: "Gehäuse-Legierungen und Akkuchemie",
-    tagline: "Härte und Korrosionsschutz",
+    role: "Gehäuse, Akku, Beschichtungen",
+    tagline: "Die Widerstandskraft im Akku",
     portrait: "Ni",
-    color: "#53a783",
-    colorLight: "#a4e2c5",
-    glow: "rgba(83, 167, 131, 0.58)",
-    ink: "#0c3b28",
-    bg: "#04130d",
-    mood: "robust, vielseitig, verborgen",
+    color: "#4ecdc4",
+    colorLight: "#a6fff7",
+    glow: "rgba(78, 205, 196, 0.58)",
+    ink: "#06433f",
+    bg: "#021411",
+    mood: "hartnäckig, modern, direkt",
   },
   {
-    id: "kupfer",
+    id: "kupfero",
     name: "Kupfero",
-    elementName: "Kupfer",
     element: "Cu · 29",
-    role: "Leitbahnen auf Platinen",
-    tagline: "Der Stromleiter im Handy",
+    role: "Kabel, Ladebuchse, Leiterbahnen",
+    tagline: "Die Strombahn im Smartphone",
     portrait: "Cu",
-    color: "#e07a3f",
-    colorLight: "#ffc39c",
-    glow: "rgba(224, 122, 63, 0.58)",
-    ink: "#5b2008",
-    bg: "#190804",
-    mood: "warm, leitfähig, unverzichtbar",
+    color: "#d9772e",
+    colorLight: "#ffc18e",
+    glow: "rgba(217, 119, 46, 0.58)",
+    ink: "#4b1f05",
+    bg: "#170803",
+    mood: "warm, leitend, offen",
   },
 ];
 
-// Dialog pro Persona:
-// - introStatement: erster Text beim Start des Calls
-// - questions: die 6 Fragen, die alle direkt zur Auswahl stehen (kein Fragebaum)
+const createDialog = (introStatement, answers) => ({
+  introStatement,
+  initialQuestionIds: ["q1", "q2", "q3", "q4", "q5", "q6"],
+  questions: Object.fromEntries(
+    answers.map(([eyebrow, label, answer], index) => {
+      const id = `q${index + 1}`;
+
+      return [id, { id, eyebrow, label, answer, unlocks: [] }];
+    }),
+  ),
+});
+
 const DIALOG_FLOWS = {
-  goldina: {
-    introStatement:
-      "Ich bin Goldina. In jedem Smartphone glänze ich unsichtbar in Kontakten und Schaltkreisen. Frag mich alles, ich antworte direkt.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde weltweit gewonnen, besonders in China, Russland, Australien, Kanada und Ghana. Oft stecke ich nur in winzigen Mengen im Gestein, deshalb müssen große Mengen Erz bewegt und verarbeitet werden, um mich zu gewinnen. Ein kleiner Teil von mir fällt auch als Nebenprodukt beim Kupferabbau an.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "In großen Minen wird goldhaltiges Gestein abgebaut, zerkleinert und industriell verarbeitet. Im handwerklichen Kleinbergbau wird in manchen Regionen noch Quecksilber eingesetzt, um Gold aus Sedimenten oder Gestein zu lösen. Das ist besonders problematisch, weil Quecksilber ein giftiges Schwermetall ist.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich stecke auf winzigen Kontaktflächen von Chips, Platinen, Steckern und der SIM-Karte. Dort schütze ich elektrische Verbindungen vor Korrosion und sorge dafür, dass Signale zuverlässig übertragen werden. In einem einzelnen Handy ist nur sehr wenig von mir enthalten, aber bei Milliarden Geräten wird daraus eine große Nachfrage.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Der Goldabbau kann große Flächen verändern und benötigt viel Energie und Wasser. Besonders gefährlich ist Quecksilber im handwerklichen Bergbau: Es kann in Gewässer gelangen, sich in Fischen anreichern und so ganze Ökosysteme belasten.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Quecksilber kann Nerven, Nieren und die Entwicklung ungeborener Kinder schädigen. In manchen Regionen arbeiten Menschen außerdem unter unsicheren Bedingungen im Kleinbergbau. Deshalb sind sichere Verfahren, Schutzkleidung und faire Lieferketten besonders wichtig.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Wenn ein altes Handy in der Schublade bleibt, bleibe ich ungenutzt auf seinen Kontaktflächen zurück. Ich kann aus Elektronikschrott zurückgewonnen werden und verliere dabei kaum an Wert. Deshalb ist fachgerechtes Recycling besser, als für neues Gold wieder mehr Gestein abzubauen.",
-      },
-    },
-  },
+  goldina: createDialog(
+    "Ich bin Goldina. In jedem Smartphone glänze ich unsichtbar in Kontakten und Schaltkreisen. Frag mich alles, ich antworte direkt.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich komme aus Südafrika, Australien, China, Russland und Ghana. Fast überall gibt es mich, aber nur in winzigen Mengen. Für ein Gramm Gold werden oft mehrere Tonnen Gestein zermahlen.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich stecke in der SIM-Karte, an Akku-Kontakten und in hauchdünnen Leiterbahnen. Ich leite zuverlässig und roste kaum. Pro Handy sind es weniger als 30 Milligramm, aber bei Milliarden Geräten summiert sich das.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Gold ist vollständig recycelbar. Trotzdem landen viele Geräte im Müll oder in Schubladen. In einer Tonne alter Handys steckt oft mehr Gold als in einer Tonne Gold-Erz.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Im Großbergbau werden ganze Berge aufgesprengt. Im Kleinbergbau wird Gold oft mit Quecksilber aus Gestein gelöst. Das Gift kann Flüsse, Böden und die Gesundheit der Menschen dauerhaft belasten.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Tagebau zerstört große Naturflächen. Quecksilber und Zyanid können Gewässer und Böden über Jahrzehnte vergiften. Dazu kommen hoher Wasser- und Energieverbrauch.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "In einigen Förderregionen arbeiten Erwachsene und Kinder ohne ausreichenden Schutz. Quecksilberdämpfe können Nerven, Gehirn und Nieren schädigen.",
+      ],
+    ],
+  ),
 
-  kobaltin: {
-    introStatement:
-      "Ich bin Kobaltin. In vielen Akkus helfe ich dabei, Energie auf kleinem Raum zu speichern. Stell deine Fragen, ich rede Klartext.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Der größte Teil des weltweit abgebauten Kobalts kommt aus der Demokratischen Republik Kongo. Danach folgt Indonesien mit deutlich kleinerem Anteil. Ich komme häufig zusammen mit Kupfer- oder Nickelerzen vor und werde deshalb oft als Nebenprodukt gewonnen.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ein Teil von mir stammt aus großen industriellen Minen. Im handwerklichen Bergbau graben Menschen in manchen Regionen jedoch in engen Schächten und oft ohne ausreichende Schutzkleidung nach kobalthaltigem Gestein. Danach werde ich aus den Erzen chemisch weiterverarbeitet.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich komme in vielen Lithium-Ionen-Akkus vor, genauer in bestimmten Kathodenmaterialien. Dort kann ich dazu beitragen, dass Batterien Energie dicht speichern und stabil arbeiten. Nicht jeder Akku enthält gleich viel von mir, weil es unterschiedliche Akkuchemien gibt.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Beim Bergbau und bei der Verarbeitung können Staub, Abraum und belastete Rückstände entstehen. Wenn diese nicht sicher behandelt werden, können Böden und Gewässer belastet werden. Gute Umweltstandards sind deshalb entscheidend.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Amnesty International dokumentierte im handwerklichen Kobaltabbau in der Demokratischen Republik Kongo gefährliche Arbeitsbedingungen, Unfälle, fehlende Schutzausrüstung und Kinderarbeit. Das betrifft nicht jede Mine, zeigt aber, warum Unternehmen ihre Lieferketten sorgfältig prüfen müssen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Bleibt ein altes Handy ungenutzt liegen, bleibe ich im Akku verborgen. Werden Akkus fachgerecht gesammelt, kann ich mit modernen Verfahren zurückgewonnen werden. Recycling kann deshalb den Bedarf an neuem Kobaltabbau verringern.",
-      },
-    },
-  },
+  kobaltin: createDialog(
+    "Ich bin Kobaltin. Ohne mich speichert dein Akku kaum Energie. Stell deine Fragen, ich rede Klartext.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Rund 70 Prozent von mir kommen aus der Demokratischen Republik Kongo, vor allem aus Katanga. Weitere Förderländer sind Russland, Australien, die Philippinen und Kanada.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich stecke in der Kathode vieler Lithium-Ionen-Akkus. Ich helfe dabei, Energie stabil und dicht zu speichern. Deshalb steckt meine Nachfrage nicht nur in Handys, sondern auch in Laptops und Elektroautos.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Kobalt lässt sich aus Akkus technisch gut zurückgewinnen. Viele alte Akkus liegen jedoch ungenutzt herum oder werden falsch entsorgt. Recycling senkt den Druck auf neue Minen.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ein Teil kommt aus großen Minen, viel aber auch aus Kleinbergbau. Menschen arbeiten dort teils in engen Schächten ohne Helm, Belüftung oder ausreichende Schutzausrüstung.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Beim Bergbau können Säuren und Schwermetalle in Böden und Flüsse gelangen. Felder und Trinkwasser werden dadurch belastet, oft noch lange nach Schließung einer Mine.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Kleinbergbau bedeutet für viele Menschen Einsturzrisiken, Staub und Vergiftungen. Organisationen berichten seit Jahren auch über Kinderarbeit in Kobaltminen.",
+      ],
+    ],
+  ),
 
-  lithium: {
-    introStatement:
-      "Ich bin Lithia. Ich mache deinen Akku leicht und leistungsfähig, aber meine Gewinnung braucht viel Aufmerksamkeit. Frag mich.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich komme aus Salzlaken und Hartgestein. Wichtige Förderländer sind Australien, China, Chile und Argentinien. Das sogenannte Lithium-Dreieck umfasst Chile, Argentinien und Bolivien und ist besonders für große Salzseen und Solelagerstätten bekannt.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "In Australien werde ich meist aus Hartgestein, vor allem Spodumen, gewonnen. In Teilen von Chile und Argentinien wird lithiumhaltige Sole aus dem Untergrund gefördert und anschließend in Verdunstungsbecken oder mit neueren Direkt-Extraktionsverfahren verarbeitet.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich stecke im Akku, genauer in der Lithium-Ionen-Batterie. Dort helfe ich dabei, Energie zu speichern und beim Benutzen des Handys wieder abzugeben. Ohne mich wären viele heutige Akkus schwerer und hätten weniger Energiedichte.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "In trockenen Salzsee-Regionen kann meine Förderung den empfindlichen Wasserhaushalt verändern. Das ist besonders kritisch, weil Wasser dort ohnehin knapp ist. Deshalb müssen Wasserverbrauch, Messdaten und Auswirkungen auf die Landschaft transparent kontrolliert werden.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Wenn Bergbau Wasserquellen, Landwirtschaft oder Weideflächen beeinträchtigt, kann es zu Konflikten mit lokalen und indigenen Gemeinschaften kommen. Wichtig sind deshalb Mitsprache, faire Vereinbarungen und verlässliche Informationen darüber, wie sich die Förderung auf Wasser auswirkt.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Wenn dein altes Handy in der Schublade liegt, bleibe ich ungenutzt im Akku zurück. Fachgerechte Sammel- und Recyclingverfahren können mich zurückgewinnen, aber dafür müssen alte Geräte zuerst abgegeben werden. Ein Akku gehört niemals in den Restmüll.",
-      },
-    },
-  },
+  lithia: createDialog(
+    "Ich bin Lithia. Ich halte die Energie deines Smartphones fest – aber mein Weg bis in den Akku ist nicht leicht.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich komme aus Salzlaken und Hartgestein. Große Mengen werden unter anderem in Australien, Chile, China und Argentinien gewonnen. Das Lithium-Dreieck umfasst Chile, Argentinien und Bolivien und ist vor allem für seine großen Salzseen bekannt.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich stecke im Akku, genauer gesagt in der Lithium-Ionen-Batterie. Dort ermögliche ich, dass Energie gespeichert und beim Benutzen des Handys wieder abgegeben werden kann.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Wenn ein altes Handy in der Schublade bleibt, bleibe ich ungenutzt im Akku zurück. Wird der Akku fachgerecht gesammelt, kann ich mit modernen Recyclingverfahren zurückgewonnen werden.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "In Australien werde ich meist aus dem Hartgestein Spodumen gewonnen. In Teilen von Chile und Argentinien wird lithiumhaltige Sole aus dem Untergrund gefördert und anschließend in Verdunstungsbecken oder neuen Direkt-Extraktionsverfahren verarbeitet.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "In trockenen Salzsee-Regionen kann die Förderung den empfindlichen Wasserhaushalt verändern. Das ist besonders problematisch, weil diese Gebiete ohnehin sehr wasserarm sind.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Wenn Bergbau Wasserquellen, Landwirtschaft oder Weideflächen betrifft, kann es zu Konflikten mit lokalen und indigenen Gemeinschaften kommen. Deshalb sind Mitbestimmung, transparente Wasserdaten und faire Vereinbarungen wichtig.",
+      ],
+    ],
+  ),
 
-  indium: {
-    introStatement:
-      "Ich bin Indira. Du siehst mich nicht, aber ohne meine transparente Leitfähigkeit würde dein Touchscreen anders funktionieren.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde meistens als Nebenprodukt aus Zinkerzen gewonnen. China ist der wichtigste Produzent, weitere Mengen werden unter anderem in Südkorea, Japan, Kanada und anderen Ländern verarbeitet. Weil ich nicht in eigenen großen Indium-Minen gefördert werde, hängt meine Verfügbarkeit stark vom Zinkbergbau ab.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ich falle bei der Verarbeitung von Zinksulfid-Erzen an. Aus Zwischenprodukten der Zinkraffination werde ich chemisch abgetrennt und weiter gereinigt. Ich werde also meistens nicht wegen mir allein abgebaut.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich bilde zusammen mit Zinn eine transparente und elektrisch leitfähige Schicht im Display. Diese Schicht heißt Indiumzinnoxid, kurz ITO. Sie hilft dabei, dass ein Bildschirm Berührungen erkennen kann, obwohl man durch sie hindurchsehen kann.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Meine Umweltfolgen hängen vor allem mit dem Zinkbergbau zusammen. Dort können Abraum, Staub und belastete Rückstände entstehen, wenn sie nicht sicher behandelt werden. Weil ich nur als Nebenprodukt anfalle, lassen sich meine Folgen nicht immer getrennt vom Zinkabbau betrachten.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Wenn Umwelt- und Arbeitsschutz im Zinkbergbau schwach sind, können Beschäftigte und Anwohner durch Staub oder belastete Rückstände gefährdet werden. Gleichzeitig macht die starke Konzentration der Produktion viele Unternehmen von wenigen Lieferländern abhängig.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Nach dem Handy bleibe ich als hauchdünne Schicht im Display zurück. Aus Produktionsresten werde ich bereits zurückgewonnen, aus alten Handys aber bisher nur begrenzt. Deshalb gehen viele meiner kleinen Mengen verloren, wenn Geräte nicht gezielt recycelt werden.",
-      },
-    },
-  },
+  indira: createDialog(
+    "Ich bin Indira. Ich mache aus einer Glasfläche einen Touchscreen, der deine Berührung versteht.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde meist als Nebenprodukt aus Zinkerzen gewonnen. China ist heute der wichtigste Produzent, weitere Raffinerien befinden sich unter anderem in Südkorea, Japan, Kanada und Europa.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich bilde zusammen mit Zinn eine sehr dünne, transparente und elektrisch leitfähige Schicht im Display. Dadurch kann der Bildschirm Berührungen erkennen, obwohl man durch die Schicht hindurchsehen kann.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich bleibe als hauchdünne Schicht im alten Display zurück. Aus Produktionsresten werde ich bereits zurückgewonnen, aus alten Handys jedoch bisher nur begrenzt.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde nicht in einer eigenen Indium-Mine abgebaut. Meist falle ich bei der Verarbeitung von Zinksulfid-Erzen als Nebenprodukt an und werde anschließend chemisch abgetrennt.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Meine Umweltfolgen hängen vor allem mit dem Zinkbergbau zusammen. Dort können Abraum, Staub und belastete Abwässer entstehen, wenn Rückstände nicht sicher behandelt werden.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Die Menschen in Förderregionen sind vor allem von den Arbeits- und Umweltstandards des Zinkbergbaus abhängig. Gleichzeitig macht die starke Konzentration der Produktion Länder und Unternehmen von wenigen Lieferanten abhängig.",
+      ],
+    ],
+  ),
 
-  gallium: {
-    introStatement:
-      "Ich bin Gallia. Ich bin selten sichtbar, aber für moderne Elektronik und Lichttechnik ziemlich wichtig.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde überwiegend als Nebenprodukt bei der Verarbeitung von Bauxit und Zinkerzen gewonnen. China produziert fast das gesamte weltweit gewonnene Primärgallium. Deshalb kann sich eine Entscheidung in einem einzigen Land schnell auf die globale Elektronikbranche auswirken.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ich werde nicht in einer eigenen Gallium-Mine gefördert. Stattdessen werde ich aus Prozesslösungen der Aluminium- oder Zinkverarbeitung abgetrennt. Meine Produktion hängt deshalb davon ab, wie viel Bauxit und Zinkerz gerade verarbeitet werden.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "In eurem Modell bin ich dem Display zugeordnet. In echten Smartphones kann ich je nach Modell in LED-Technik, im Kamerablitz oder in speziellen Funkchips vorkommen. Besonders Galliumarsenid und Galliumnitrid sind für Hochfrequenztechnik und optoelektronische Bauteile wichtig.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Meine Umweltfolgen hängen vor allem mit der Bauxit-, Aluminium- und Zinkverarbeitung zusammen. Beim Bauxitabbau können Landschaften verändert werden, und bei der Aluminiumoxid-Produktion können stark alkalische Rückstände entstehen. Ich selbst komme dabei nur in kleinen Mengen mit heraus.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Meine größte menschliche und wirtschaftliche Herausforderung ist die starke Lieferabhängigkeit. Wenn Exporte eingeschränkt werden oder es politische Konflikte gibt, kann das die Herstellung von Funktechnik, LEDs und Elektronik weltweit beeinflussen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Nach dem Handy bleibe ich in kleinen elektronischen Bauteilen zurück. Aus Produktionsresten kann Gallium zurückgewonnen werden, aus alten Geräten findet bisher jedoch kaum gezieltes Recycling statt. Dadurch bleibt viel von mir im Elektroschrott verborgen.",
-      },
-    },
-  },
+  gallia: createDialog(
+    "Ich bin Gallia. Ich helfe Chips und LEDs dabei, schnell zu denken und zu leuchten.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde überwiegend als Nebenprodukt der Bauxit- und Zinkverarbeitung gewonnen. China produziert fast das gesamte weltweit gewonnene Primärgallium.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "In eurem Modell bin ich dem Display zugeordnet. Je nach Smartphone-Modell kann ich in Beleuchtungs- und Displaytechnik vorkommen, besonders wichtig bin ich aber auch in Funkchips und LEDs, etwa für den Kamerablitz.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Nach dem Handy bleibe ich in kleinen elektronischen Bauteilen zurück. Aus alten Geräten werde ich derzeit kaum gezielt zurückgewonnen.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde aus Prozesslösungen der Aluminium- oder Zinkverarbeitung abgetrennt. Deshalb hängt meine Produktion davon ab, wie viel Bauxit und Zinkerz verarbeitet werden.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Meine Umweltbilanz hängt besonders mit der Bauxitverarbeitung zusammen. Beim Abbau von Bauxit und bei der Aluminiumoxid-Produktion können Landschaften verändert und alkalische Rückstände entstehen.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Die starke Abhängigkeit von China schafft ein Versorgungsrisiko. Exportkontrollen können deshalb weltweit Auswirkungen auf Technikunternehmen und die Produktion elektronischer Geräte haben.",
+      ],
+    ],
+  ),
 
-  silizium: {
-    introStatement:
-      "Ich bin Silico. Ohne mich gäbe es keine modernen Chips – und damit auch kein Smartphone, wie du es kennst.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich beginne als Quarz beziehungsweise Siliciumdioxid in Gestein und Sand. Für die Elektronik werde ich aber extrem stark gereinigt, bis daraus hochreines Halbleitermaterial entsteht. Ich bin in der Erdkruste häufig, doch Chipqualität zu erzeugen ist sehr aufwendig.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Quarz wird bei sehr hohen Temperaturen zu Silizium verarbeitet. Danach wird das Material in mehreren Schritten gereinigt und zu dünnen Wafern verarbeitet. Auf diese Wafer werden später die winzigen Strukturen von Chips aufgebracht.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich bin der Grundstoff für fast alle Chips im Smartphone: Prozessor, Speicher, Funktechnik und Kamerasensor. In eurem Modell bin ich der Kamera zugeordnet, weil der Bildsensor auf Silizium basiert und Licht in digitale Bilddaten verwandelt.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Die Herstellung von hochreinem Silizium und Chips benötigt viel Energie. Wie groß die Klimabelastung ist, hängt deshalb stark davon ab, ob dafür Strom aus Kohle, Gas oder erneuerbaren Quellen eingesetzt wird.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Quarz ist nicht selten, aber moderne Chipfertigung ist auf wenige Regionen und Unternehmen konzentriert. Störungen in wichtigen Produktionsstandorten können deshalb weltweit Lieferprobleme verursachen – das hat man bei den Chipengpässen der vergangenen Jahre deutlich gesehen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "In alten Handys bleibe ich in Chips und Sensoren zurück. Weil diese Bauteile winzig und komplex sind, werde ich meist nicht wieder zu neuem hochreinem Chip-Silizium verarbeitet. Deshalb ist die längere Nutzung eines funktionierenden Smartphones besonders sinnvoll.",
-      },
-    },
-  },
+  silico: createDialog(
+    "Ich bin Silico. Ohne mich gäbe es keine Chips, keine Sensoren und kein digitales Gehirn im Smartphone.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich beginne als Quarz beziehungsweise Siliciumdioxid in Gestein und Sand. Für Chips werde ich anschließend extrem stark gereinigt, bis daraus hochreines Polysilizium entsteht.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich bin der Grundstoff für fast alle Chips im Smartphone: Prozessor, Speicher, Funktechnik und Kamerasensor. In eurem Modell liege ich bei der Kamera, weil der Bildsensor auf Silizium basiert.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "In alten Handys bleibe ich in Chips und Sensoren zurück. Weil die Bauteile sehr klein und komplex sind, wird daraus meist kein neues hochreines Chip-Silizium gewonnen.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Quarz wird bei sehr hohen Temperaturen zu Silizium verarbeitet. Danach wird das Material in mehreren Schritten gereinigt und zu Wafern verarbeitet, auf denen später Chips entstehen.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Die Herstellung von hochreinem Silizium benötigt viel Energie. Wie groß die Klimabelastung ist, hängt deshalb stark davon ab, ob der eingesetzte Strom aus Kohle, Gas oder erneuerbaren Quellen stammt.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Die Herstellung leistungsfähiger Chips ist weltweit auf wenige Regionen und Unternehmen konzentriert. Störungen in wichtigen Produktionsstandorten, zum Beispiel in Taiwan, können dadurch weltweit Lieferengpässe auslösen.",
+      ],
+    ],
+  ),
 
-  zinn: {
-    introStatement:
-      "Ich bin Zinnia. Ich halte winzige Bauteile zusammen, damit dein Smartphone überhaupt funktioniert.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde meist aus dem Mineral Kassiterit gewonnen. Wichtige Förderländer sind China, Indonesien, Peru, Brasilien und die Demokratische Republik Kongo. Meine Lieferketten können sehr unterschiedlich aussehen: von großen Minen bis zu kleinem, handwerklichem Abbau.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Je nach Lagerstätte werde ich im Tagebau, Untertagebau oder durch das Auswaschen von Schwemmsedimenten gewonnen. Danach wird Kassiterit-Erz aufbereitet und das Metall durch Schmelzprozesse gewonnen. Besonders beim Abbau in Fluss- und Küstenregionen müssen Böden und Gewässer geschützt werden.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich verbinde elektronische Bauteile durch Lötstellen miteinander. In eurem Modell bin ich der Kamera zugeordnet, tatsächlich komme ich aber in Lötstellen vieler Smartphone-Bauteile vor. Ohne diese winzigen Verbindungen würden Chips, Sensoren und Platinen nicht zuverlässig zusammenarbeiten.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Besonders der Abbau aus Schwemmsedimenten kann Böden aufwühlen und Flüsse mit Sedimenten belasten. Auch Rückstände aus dem Bergbau müssen sicher gelagert werden, damit sie nicht in Böden oder Gewässer gelangen.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Ich gehöre zusammen mit Gold, Tantal und Wolfram zu den sogenannten Konfliktmineralien. Das bedeutet nicht, dass jedes Zinn problematisch ist. Aber Lieferketten aus Konflikt- und Hochrisikogebieten brauchen besondere Kontrollen, damit Menschenrechte und sichere Arbeit geschützt werden.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Ich bleibe in Lötstellen auf Platinen und Modulen zurück. Ich kann recycelt werden, aber nur wenn alte Geräte gesammelt, zerlegt und fachgerecht behandelt werden. Bleibt das Handy in der Schublade, bleibe auch ich dort gebunden.",
-      },
-    },
-  },
+  zinnia: createDialog(
+    "Ich bin Zinnia. Ich halte die Elektronik im Inneren deines Smartphones zusammen.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde vor allem aus dem Mineral Kassiterit gewonnen. Zu den wichtigen Förderländern zählen China, Indonesien, Peru, Brasilien und die Demokratische Republik Kongo.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich verbinde elektronische Bauteile durch Lötstellen miteinander. In eurem Modell bin ich der Kamera zugeordnet, tatsächlich komme ich aber in Lötstellen vieler Smartphone-Bauteile vor.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich bleibe in Lötstellen auf Platinen und Modulen zurück. Ich kann recycelt werden, dafür müssen alte Geräte jedoch gesammelt, zerlegt und richtig behandelt werden.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde aus Kassiterit-Erz gewonnen. Je nach Lagerstätte geschieht das im Tagebau, Untertagebau oder durch das Auswaschen von Schwemmsedimenten.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Besonders der Abbau aus Schwemmsedimenten kann Böden aufwühlen und Flüsse mit Sedimenten belasten. Rückstände aus dem Bergbau müssen deshalb sicher gelagert werden.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Zinn gehört zusammen mit Gold, Tantal und Wolfram zu den sogenannten Konfliktmineralien. Das heißt nicht, dass jedes Zinn problematisch ist, aber bei Lieferketten aus Konflikt- und Hochrisikogebieten sind besondere Kontrollen nötig.",
+      ],
+    ],
+  ),
 
-  neodym: {
-    introStatement:
-      "Ich bin Neodya. Meine Magnete sind klein, aber stark genug, damit dein Smartphone klingt und vibriert.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich gehöre zu den Seltenen Erden und werde gemeinsam mit anderen Seltenen Erden gefördert. China ist besonders wichtig für Förderung und Verarbeitung, es gibt aber auch Produktion in anderen Ländern. Weltweit werden Seltene Erden vor allem für starke Magnete gebraucht.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ich werde nicht allein abgebaut, sondern aus Mineralgemischen zusammen mit anderen Seltenen Erden gewonnen. Danach müssen die einzelnen Elemente mit aufwendigen chemischen Verfahren voneinander getrennt werden. Diese Verarbeitung ist technisch anspruchsvoll und erzeugt viele Rückstände.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich stecke in starken Permanentmagneten. Diese Magnete befinden sich zum Beispiel im Lautsprecher, im Vibrationsmotor und teilweise in weiteren kleinen Antrieben. Ich mache es möglich, dass Magnete klein bleiben und trotzdem sehr kräftig sind.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Einige Seltene-Erden-Erze enthalten auch Thorium. Bei der Verarbeitung können deshalb belastete oder radioaktive Rückstände entstehen, die sorgfältig überwacht und sicher gelagert werden müssen. Das gilt nicht für jede Lagerstätte gleich stark.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Menschen in der Nähe von Minen und Aufbereitungsanlagen können betroffen sein, wenn Staub, belastetes Wasser oder Rückstände nicht sicher kontrolliert werden. Das Risiko steigt besonders bei schwachen Umwelt- und Sicherheitsstandards.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Nach dem Handy bleibe ich in winzigen Magneten zurück. Seltene Erden werden aus Elektroschrott bisher nur in begrenzten Mengen zurückgewonnen. Deshalb ist es wichtig, alte Geräte nicht ungenutzt liegen zu lassen, sondern fachgerecht abzugeben.",
-      },
-    },
-  },
+  neodya: createDialog(
+    "Ich bin Neodya. Klein gebaut, aber magnetisch stark – ich bringe dein Smartphone zum Klingen und Vibrieren.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich gehöre zu den Seltenen Erden und werde gemeinsam mit anderen Seltenen Erden gefördert. China ist der wichtigste Produzent und Verarbeiter, es gibt aber auch Förderung in Ländern wie Australien, den USA und Myanmar.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich stecke in sehr starken Permanentmagneten. Diese Magnete befinden sich zum Beispiel im Lautsprecher, im Vibrationsmotor und teilweise in weiteren kleinen Antrieben des Smartphones.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Nach dem Handy bleibe ich in winzigen Magneten zurück. Seltene Erden werden aus Elektroschrott bisher nur in begrenzten Mengen zurückgewonnen.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde nicht allein abgebaut, sondern zusammen mit anderen Seltenen Erden aus Mineralgemischen gewonnen. Danach müssen die einzelnen Elemente mit aufwendigen chemischen Verfahren voneinander getrennt werden.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Bei manchen Lagerstätten enthalten die Erze auch Thorium oder Uran. Bei der Aufbereitung können deshalb Rückstände entstehen, die sorgfältig überwacht und sicher gelagert werden müssen.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Menschen in der Nähe von Minen und Aufbereitungsanlagen können betroffen sein, wenn Staub, belastetes Wasser oder Rückstände nicht sicher kontrolliert werden. Das Risiko entsteht vor allem durch schlechte Umwelt- und Sicherheitsstandards.",
+      ],
+    ],
+  ),
 
-  dysprosium: {
-    introStatement:
-      "Ich bin Dysra. Ich komme nur in kleinen Mengen vor, aber ich helfe Magneten dabei, auch bei Wärme stabil zu bleiben.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich bin ebenfalls eine Seltene Erde und komme gemeinsam mit anderen Seltenen Erden vor. Meine Lieferkette ist besonders stark auf wenige Förder- und Verarbeitungsregionen konzentriert, vor allem auf China. Gerade weil ich so spezialisiert bin, kann eine Unterbrechung schnell Folgen haben.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ich werde aus einem Gemisch Seltener Erden chemisch abgetrennt. Das ist aufwendig, weil ich vielen anderen Seltenen Erden chemisch ähnlich bin. Daher braucht meine Gewinnung mehrere Schritte der Aufbereitung und Trennung.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich kann Neodym-Magneten in kleinen Mengen beigemischt werden. Dadurch bleiben diese Magnete auch bei Wärme stabil und funktionieren zuverlässig. In eurem Modell bin ich deshalb dem Lautsprecher zugeordnet.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Wie bei Neodym können bei bestimmten Seltene-Erden-Erzen belastete oder radioaktive Begleitstoffe anfallen. Gute Abfallbehandlung ist deshalb besonders wichtig. Nicht jede Mine verursacht die gleichen Folgen, aber die Risiken müssen ernst genommen werden.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Meine Versorgung ist stark konzentriert. Exportbeschränkungen oder politische Konflikte können deshalb weltweit die Produktion von Magneten und Elektronik beeinflussen. 2025 unterlag ich zeitweise chinesischen Exportkontrollen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Ich bleibe zusammen mit Neodym in alten Magneten zurück. Weil ich nur in sehr kleinen Mengen vorkomme, ist meine Rückgewinnung aus Elektroschrott schwierig. Umso wichtiger ist es, dass alte Geräte überhaupt in den Recyclingkreislauf gelangen.",
-      },
-    },
-  },
+  dysra: createDialog(
+    "Ich bin Dysra. Ich mache Magnete hitzefester, damit sie auch unter Druck zuverlässig bleiben.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich bin ebenfalls eine Seltene Erde und komme gemeinsam mit anderen Seltenen Erden vor. Meine Lieferkette ist besonders stark auf wenige Förder- und Verarbeitungsregionen konzentriert, vor allem auf China.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich werde Neodym-Magneten in kleinen Mengen beigemischt. Dadurch bleiben die Magnete auch bei Wärme stabil und funktionieren zuverlässig.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich bleibe zusammen mit Neodym in alten Magneten zurück. Da ich nur in sehr kleinen Mengen vorkomme, ist meine Rückgewinnung aus Elektroschrott bisher schwierig.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde aus einem Gemisch Seltener Erden chemisch abgetrennt. Die Trennung ist komplex, weil ich chemisch sehr ähnliche Eigenschaften wie viele andere Seltene Erden habe.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Wie bei Neodym können bei der Gewinnung bestimmter Seltene-Erden-Erze belastete oder radioaktive Begleitstoffe anfallen. Gute Abfallbehandlung ist deshalb besonders wichtig.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Meine starke Konzentration in wenigen Lieferketten kann zu Versorgungsrisiken führen. Exportbeschränkungen oder politische Konflikte können dann weltweit die Produktion von Magneten und Elektronik beeinflussen.",
+      ],
+    ],
+  ),
 
-  aluminium: {
-    introStatement:
-      "Ich bin Alumina. Ich mache viele Smartphones leicht und stabil – aber meine Herstellung braucht sehr viel Energie.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde aus Bauxit gewonnen. Bauxit wird meist im Tagebau abgebaut und anschließend zu Aluminiumoxid und danach zu Aluminium verarbeitet. Für die letzte Stufe wird besonders viel Strom benötigt.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Zuerst wird Bauxit abgebaut und mit Natronlauge zu Aluminiumoxid verarbeitet. Danach wird Aluminiumoxid durch Elektrolyse in Aluminium umgewandelt. Dieser Prozess ist sehr energieintensiv, weshalb der Strommix eine große Rolle spielt.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "In eurem Modell stecke ich im Gehäuse und Rahmen. Ich mache viele Smartphones leicht, stabil und hochwertig. Je nach Modell kann ich außerdem in weiteren Bauteilen und Abschirmungen vorkommen.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Für Bauxitminen können Wälder und Böden großflächig verändert werden. Bei der Verarbeitung entsteht außerdem Bauxitrückstand, auch Rotschlamm genannt, der sicher gelagert werden muss. Ohne gute Planung können Böden und Gewässer belastet werden.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Wenn Minen Land, Wasser oder Wälder verändern, kann das Landwirtschaft und lokale Lebensgrundlagen beeinträchtigen. Faire Entschädigung, Beteiligung der Bevölkerung und Renaturierung nach dem Abbau sind deshalb wichtige Themen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Ich kann sehr gut eingeschmolzen und wiederverwendet werden. Recycling-Aluminium benötigt deutlich weniger Energie als neues Aluminium aus Bauxit. Das funktioniert aber nur, wenn alte Handys gesammelt und fachgerecht recycelt werden.",
-      },
-    },
-  },
+  alumina: createDialog(
+    "Ich bin Alumina. Ich halte dein Smartphone leicht, stabil und geschützt.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde aus Bauxit gewonnen. Bauxit wird meist im Tagebau abgebaut und anschließend zu Aluminiumoxid und danach mit sehr viel Strom zu Aluminium verarbeitet.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "In eurem Modell stecke ich im Gehäuse und Rahmen. Ich mache viele Smartphones leicht, stabil und hochwertig.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich kann sehr gut eingeschmolzen und wiederverwendet werden. Das funktioniert aber nur, wenn das alte Handy abgegeben und fachgerecht recycelt wird.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Zuerst wird Bauxit abgebaut und mit Natronlauge verarbeitet. Danach wird Aluminiumoxid durch Elektrolyse in Aluminium umgewandelt.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Für Bauxitminen können Wälder und Böden großflächig verändert werden. Bei der Verarbeitung entsteht außerdem Bauxitrückstand, auch Rotschlamm genannt, der sicher gelagert werden muss.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Wenn Minen Land, Wasser oder Wälder verändern, kann das Landwirtschaft und lokale Lebensgrundlagen beeinträchtigen. Deshalb sind faire Entschädigung, Beteiligung und Renaturierung nach dem Abbau wichtig.",
+      ],
+    ],
+  ),
 
-  nickel: {
-    introStatement:
-      "Ich bin Nickelix. Ich kann Metall härter machen und spiele auch in manchen modernen Akkuchemien eine wichtige Rolle.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde vor allem aus Laterit- und Sulfiderzen gewonnen. Indonesien ist heute mit großem Abstand der wichtigste Förderstaat für Nickel. Weitere Mengen kommen unter anderem aus den Philippinen, Russland, Kanada und Australien.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Lateriterze werden häufig im Tagebau abgebaut und danach geschmolzen oder chemisch ausgelaugt. Sulfiderze werden anders verarbeitet und können zusammen mit Kupfer oder Kobalt vorkommen. Beide Wege brauchen viel Energie und sorgfältige Kontrolle der Rückstände.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "In eurem Modell bin ich dem Gehäuse zugeordnet, weil ich in Legierungen und Beschichtungen vorkommen kann. In modernen Smartphones bin ich aber auch für bestimmte Akkuchemien wichtig. Deshalb kann ich je nach Modell an mehreren Stellen auftauchen.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Nickelabbau und Raffination benötigen oft viel Energie. Bei unzureichendem Schutz können Abraum, Sedimente oder belastete Abwässer Böden, Flüsse oder Küstengewässer beeinträchtigen. Besonders in tropischen Regionen sind gute Umweltauflagen wichtig.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "Wenn Gewässer oder Fischgründe belastet werden, trifft das Menschen, die von Landwirtschaft oder Fischerei leben. Auch sichere Arbeitsbedingungen und die Beteiligung lokaler Gemeinschaften sind wichtige Themen, wenn neue Minen und Raffinerien entstehen.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Ich kann aus Akkus, Legierungen und Elektronikschrott zurückgewonnen werden. Wenn Handys nicht gesammelt werden, bleibe ich jedoch ungenutzt in alten Geräten. Recycling ist besonders sinnvoll, weil Nickel auch aus Schrott wieder in den Kreislauf zurückkehren kann.",
-      },
-    },
-  },
+  nickelix: createDialog(
+    "Ich bin Nickelix. Ich mache Kontakte robust und unterstütze moderne Akkus.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde vor allem aus Laterit- und Sulfiderzen gewonnen. Indonesien ist heute mit großem Abstand der wichtigste Förderstaat für Nickel.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "In eurem Modell bin ich dem Gehäuse zugeordnet, weil ich in Legierungen und Beschichtungen vorkommen kann. In modernen Smartphones bin ich jedoch besonders wichtig für bestimmte Akkuchemien, zum Beispiel NMC-Akkus.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich kann aus Akkus, Legierungen und Elektronikschrott zurückgewonnen werden. Wenn Handys nicht gesammelt werden, bleibe ich jedoch ungenutzt in alten Geräten.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Lateriterze werden häufig im Tagebau abgebaut und danach energieintensiv geschmolzen oder chemisch ausgelaugt. Sulfiderze werden dagegen anders aufbereitet und können zusammen mit Kupfer oder Kobalt vorkommen.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Nickelabbau und Raffination können viel Energie benötigen. Bei unzureichendem Schutz können Abraum, Sedimente oder belastete Abwässer Flüsse, Küstengewässer und Böden beeinträchtigen.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "Wenn Gewässer oder Fischgründe belastet werden, kann das Menschen treffen, die von Landwirtschaft oder Fischerei leben. Auch sichere Arbeitsbedingungen und eine faire Beteiligung lokaler Gemeinschaften sind wichtige Themen.",
+      ],
+    ],
+  ),
 
-  kupfer: {
-    introStatement:
-      "Ich bin Kupfero. Ich leite Strom durch dein Smartphone und verbinde viele seiner Bauteile miteinander.",
-    questions: {
-      q1: {
-        id: "q1",
-        eyebrow: "Herkunft",
-        label: "Woher kommst du?",
-        answer:
-          "Ich werde weltweit gefördert. Chile ist derzeit der größte Produzent, gefolgt von der Demokratischen Republik Kongo und Peru. Die große Kupfermine Escondida liegt in Chile, nicht in Peru.",
-      },
-      q2: {
-        id: "q2",
-        eyebrow: "Abbau",
-        label: "Wie wirst du gewonnen?",
-        answer:
-          "Ich werde aus Kupfererz gewonnen, häufig in großen Tagebauen, manchmal aber auch unter Tage. Das Erz wird zerkleinert, aufbereitet und anschließend geschmolzen oder durch Laugung verarbeitet. Je niedriger der Kupfergehalt im Gestein ist, desto mehr Material muss bewegt werden.",
-      },
-      q3: {
-        id: "q3",
-        eyebrow: "Smartphone",
-        label: "Wo steckst du im Handy?",
-        answer:
-          "Ich bilde Leitbahnen auf Platinen, feine Drähte und elektrische Verbindungen. Von allen Metallen steckt von mir besonders viel in einem Smartphone, weil ich Strom sehr gut leite. Ich verbinde dadurch viele Bauteile miteinander.",
-      },
-      q4: {
-        id: "q4",
-        eyebrow: "Umwelt",
-        label: "Ökologische Folgen?",
-        answer:
-          "Bei sulfidischen Kupfererzen kann saure Grubenentwässerung entstehen. Diese kann Schwermetalle aus dem Gestein lösen und Grundwasser, Flüsse oder Böden belasten. Deshalb müssen Minenabwässer langfristig kontrolliert werden.",
-      },
-      q5: {
-        id: "q5",
-        eyebrow: "Menschen",
-        label: "Folgen für Menschen?",
-        answer:
-          "In Bergbauregionen entstehen häufig Konflikte, wenn Minen viel Wasser benötigen oder Trinkwasserquellen gefährden. Gute Kontrolle, transparente Umweltprüfungen und Mitsprache der Bevölkerung sind deshalb entscheidend.",
-      },
-      q6: {
-        id: "q6",
-        eyebrow: "Danach",
-        label: "Was passiert nach dem Handy?",
-        answer:
-          "Ich bin wertvoll und kann gut recycelt werden. Wenn ein Handy richtig gesammelt wird, kann ich aus Elektronikschrott zurückgewonnen und erneut eingesetzt werden. Bleibt es in der Schublade, bleibe ich für den Kreislauf verloren.",
-      },
-    },
-  },
+  kupfero: createDialog(
+    "Ich bin Kupfero. Ich bin die Strombahn im Smartphone – ohne mich würde kein Signal ankommen.",
+    [
+      [
+        "Herkunft",
+        "Woher kommst du?",
+        "Ich werde weltweit gefördert. Nach aktuellen USGS-Daten ist Chile der größte Produzent, gefolgt von der Demokratischen Republik Kongo und Peru; die Mine Escondida liegt in Chile.",
+      ],
+      [
+        "Smartphone",
+        "Wo steckst du im Handy?",
+        "Ich bilde Leitbahnen auf Platinen, feine Drähte und elektrische Verbindungen. Von allen Metallen steckt von mir besonders viel in einem Smartphone, weil ich Strom sehr gut leite.",
+      ],
+      [
+        "Danach",
+        "Was passiert nach dem Handy?",
+        "Ich bin wertvoll und kann gut recycelt werden. Wenn ein Handy richtig gesammelt wird, kann ich aus Elektronikschrott zurückgewonnen und erneut eingesetzt werden.",
+      ],
+      [
+        "Abbau",
+        "Wie wirst du gewonnen?",
+        "Ich werde aus Kupfererz gewonnen, häufig in großen Tagebauen, manchmal aber auch unter Tage. Das Erz wird zerkleinert, aufbereitet und anschließend geschmolzen oder durch Laugung verarbeitet.",
+      ],
+      [
+        "Umwelt",
+        "Welche Folgen hat mein Abbau für die Umwelt?",
+        "Bei sulfidischen Kupfererzen kann saure Grubenentwässerung entstehen. Diese kann Schwermetalle aus dem Gestein lösen und Grundwasser, Flüsse oder Böden belasten.",
+      ],
+      [
+        "Menschen",
+        "Welche Folgen hat mein Abbau für Menschen?",
+        "In Bergbauregionen entstehen häufig Konflikte, wenn Minen Wasser verbrauchen oder Trinkwasserquellen gefährden. Gute Kontrolle, transparente Umweltprüfungen und Mitsprache der Bevölkerung sind deshalb entscheidend.",
+      ],
+    ],
+  ),
 };
 
 function getDialog(personaId) {
   return DIALOG_FLOWS[personaId] ?? {
     introStatement: "",
+    initialQuestionIds: [],
     questions: {},
   };
 }
@@ -785,12 +627,30 @@ export function getPersonaIntro(personaId) {
   return getDialog(personaId).introStatement;
 }
 
+export function getInitialQuestions(personaId) {
+  const dialog = getDialog(personaId);
+
+  return dialog.initialQuestionIds
+    .map((questionId) => dialog.questions[questionId])
+    .filter(Boolean);
+}
+
 export function getQuestions(personaId) {
-  return Object.values(getDialog(personaId).questions);
+  const dialog = getDialog(personaId);
+
+  return Object.values(dialog.questions);
 }
 
 export function getQuestionById(personaId, questionId) {
   return getDialog(personaId).questions[questionId] ?? null;
+}
+
+export function getVisibleQuestions(personaId, visibleQuestionIds) {
+  const dialog = getDialog(personaId);
+
+  return visibleQuestionIds
+    .map((questionId) => dialog.questions[questionId])
+    .filter(Boolean);
 }
 
 export function getResponseForQuestion(personaId, questionId) {
@@ -800,6 +660,7 @@ export function getResponseForQuestion(personaId, questionId) {
     window.setTimeout(() => {
       resolve({
         answer: question?.answer ?? "Dazu habe ich gerade keine Antwort.",
+        unlocks: question?.unlocks ?? [],
       });
     }, 720);
   });
