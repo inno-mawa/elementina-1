@@ -1,9 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
-  getInitialQuestions,
   getPersonaIntro,
+  getQuestions,
   getResponseForQuestion,
-  getVisibleQuestions,
   PERSONAS,
 } from "./data.js";
 
@@ -196,7 +195,9 @@ function SelectionScreen({ onSelect, onTap }) {
         <header className="selection-header">
           <div className="status-pill">Element Hotline</div>
           <h1>Wen möchtest du anrufen?</h1>
-          <p>Tippe auf ein Element und stelle deine Fragen im Live-Interview.</p>
+          {tab === "call" ? (
+            <p>Tippe auf ein Element und stelle deine Fragen im Live-Interview.</p>
+          ) : null}
         </header>
 
         {tab === "call" ? (
@@ -228,22 +229,22 @@ function SelectionScreen({ onSelect, onTap }) {
             <p>
               Unser Team entwickelt im Rahmen eines Product-Development-Projekts ein interaktives
               Ausstellungskonzept zum Thema Resource Consciousness. Im Fokus steht die Frage, wie
-              die verborgene Materialitaet technischer und digitaler Produkte, etwa Smartphones oder
-              KI-Infrastruktur, verstaendlich und erlebbar gemacht werden kann.
+              die verborgene Materialität technischer und digitaler Produkte, etwa Smartphones oder
+              KI-Infrastruktur, verständlich und erlebbar gemacht werden kann.
             </p>
             <p>
-              Ziel ist es, Besucher:innen fuer seltene Erden, kritische Rohstoffe, Lieferketten,
+              Ziel ist es, Besucher:innen für seltene Erden, kritische Rohstoffe, Lieferketten,
               Bergbau und Recycling zu sensibilisieren, ohne moralisch zu wirken oder
-              Schuldgefuehle zu erzeugen.
+              Schuldgefühle zu erzeugen.
             </p>
             <p>
-              Das Projekt entsteht in Zusammenarbeit mit Lukas Wagner von der Universitaet Marburg.
+              Das Projekt entsteht in Zusammenarbeit mit Lukas Wagner von der Universität Marburg.
               Methodisch arbeitet das Team mit Design Thinking: Es recherchiert den Problemraum,
-              fuehrt Interviews, entwickelt Personas und User Journeys und leitet daraus moegliche
+              führt Interviews, entwickelt Personas und User Journeys und leitet daraus mögliche
               Ausstellungsideen ab.
             </p>
             <p>
-              Die spaetere Installation soll kompakt, zugaenglich und reflektierend sein, etwa fuer
+              Die spätere Installation soll kompakt, zugänglich und reflektierend sein, etwa für
               einen Foyer- oder Vorraumkontext.
             </p>
           </div>
@@ -388,7 +389,6 @@ function FaceTimeScreen({ persona, onHangUp, onTap, onHangupSound }) {
   const [answer, setAnswer] = useState("");
   const [loading, setLoading] = useState(false);
   const [activeQ, setActiveQ] = useState(null);
-  const [visibleQuestionIds, setVisibleQuestionIds] = useState([]);
   const [elapsed, setElapsed] = useState(0);
   const {
     enabled: voiceEnabled,
@@ -397,10 +397,7 @@ function FaceTimeScreen({ persona, onHangUp, onTap, onHangupSound }) {
     speak,
     stop: stopSpeech,
   } = useSpeech();
-  const visibleQuestions = useMemo(
-    () => getVisibleQuestions(persona.id, visibleQuestionIds),
-    [persona.id, visibleQuestionIds],
-  );
+  const questions = useMemo(() => getQuestions(persona.id), [persona.id]);
 
   useEffect(() => {
     const timer = window.setInterval(() => setElapsed((current) => current + 1), 1000);
@@ -408,11 +405,8 @@ function FaceTimeScreen({ persona, onHangUp, onTap, onHangupSound }) {
   }, []);
 
   useEffect(() => {
-    const introText = getPersonaIntro(persona.id);
-    const initialQuestions = getInitialQuestions(persona.id);
-    setAnswer(introText);
+    setAnswer(getPersonaIntro(persona.id));
     setActiveQ(null);
-    setVisibleQuestionIds(initialQuestions.map((question) => question.id));
   }, [persona.id]);
 
   const formattedTime = useMemo(() => {
@@ -429,15 +423,6 @@ function FaceTimeScreen({ persona, onHangUp, onTap, onHangupSound }) {
     setAnswer("");
     const response = await getResponseForQuestion(persona.id, question.id);
     setAnswer(response.answer);
-    setVisibleQuestionIds((currentIds) => {
-      const merged = [...currentIds];
-      for (const newQuestionId of response.unlocks) {
-        if (!merged.includes(newQuestionId)) {
-          merged.push(newQuestionId);
-        }
-      }
-      return merged;
-    });
     setLoading(false);
     speak(response.answer);
   }
@@ -489,7 +474,7 @@ function FaceTimeScreen({ persona, onHangUp, onTap, onHangupSound }) {
 
       <section className="question-dock">
         <div className="question-grid">
-          {visibleQuestions.map((question) => (
+          {questions.map((question) => (
             <LiquidButton
               key={question.id}
               className={activeQ === question.id && answer ? "selected" : ""}

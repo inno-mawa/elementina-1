@@ -3,10 +3,10 @@ id: workflows
 title: Abläufe
 order: 40
 status: current
-last_updated: 2026-06-17
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/data.js
-summary: Die zentralen End-to-End-Abläufe — Anruf starten und Fragebaum durchlaufen.
+summary: Die zentralen End-to-End-Abläufe — Anruf starten und Fragen stellen.
 ---
 
 ## Anruf starten (Selection → FaceTime)
@@ -27,12 +27,13 @@ sequenceDiagram
   Note over App: setTimeout ≈2,2 s
   App->>App: screen = "facetime"
   App->>S: stopRinging() + connect()
-  FT->>FT: Intro-Text + Initialfragen laden
+  FT->>FT: Intro-Text laden, alle 6 Fragen zeigen
 ```
 
-## Frage beantworten & Folgefragen freischalten
+## Frage beantworten
 
-Der Kern der Interaktion: Auswahl → (simulierte) Latenz → Antwort → neue Fragen.
+Der Kern der Interaktion: Auswahl → (simulierte) Latenz → Antwort. Die sechs
+Fragen stehen durchgehend zur Auswahl; es werden keine neuen freigeschaltet.
 
 ```mermaid
 sequenceDiagram
@@ -44,8 +45,8 @@ sequenceDiagram
   FT->>FT: loading = true (Tipp-Animation)
   FT->>D: getResponseForQuestion(persona, qId)
   Note over D: ≈720 ms Verzögerung
-  D-->>FT: { answer, unlocks }
-  FT->>FT: Antwort anzeigen, unlocks mergen
+  D-->>FT: { answer }
+  FT->>FT: Antwort anzeigen
   FT->>T: speak(answer)  // nur wenn Voice aktiv
 ```
 

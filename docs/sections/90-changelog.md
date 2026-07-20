@@ -3,7 +3,7 @@ id: changelog
 title: Changelog
 order: 90
 status: current
-last_updated: 2026-06-24
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: 
 summary: Laufendes Protokoll der Doku-Updates, neueste zuerst.
@@ -12,6 +12,71 @@ summary: Laufendes Protokoll der Doku-Updates, neueste zuerst.
 Ein Eintrag pro Doku-Update, neueste zuerst: Datum, betroffene Sektionen und
 eine Zeile, was sich warum geändert hat. Das ist der Audit-Trail, der die Doku
 ehrlich hält.
+
+## 2026-07-05
+
+- **Schwarzer Balken im Handy-Vollbild behoben:** Das beim Aspect-Ratio-Fix
+  ergänzte `max-height: 94dvh` der Basis-`device-frame`-Regel wirkte auch im
+  Vollbild-Modus (`max-width: 540px`) weiter und ließ unten einen 6%-Rand frei.
+  Im Vollbild werden `aspect-ratio` und `max-height` jetzt explizit aufgehoben
+  (`100dvw × 100dvh`).
+- **Tab-Bar-Ausblendung browserübergreifend gefixt:** Der `mask-image`-Verlauf
+  ließ den Inhalt in Firefox unter der Leiste hervorschauen (Firefox positioniert
+  die Maske relativ zum gescrollten Inhalt, nicht zum sichtbaren Rahmen). Ersetzt
+  durch einen Verlaufs-Scrim (`.selection-screen::after`) in Hintergrundfarbe, der
+  den Leistenbereich abdeckt — verhält sich in allen Browsern gleich.
+- **Rahmen-Proportion gekoppelt (kein Stauchen mehr):** Breite und Höhe des
+  Device-Frames wurden bisher unabhängig gedeckelt, wodurch der Rahmen bei
+  niedrigen/breiten Fenstern unförmig gestaucht wurde. Jetzt über
+  `aspect-ratio: 26/49` fest gekoppelt: max. 520px (bzw. 760px auf großen
+  Displays) wie zuvor, aber bei knapper Höhe schrumpft er proportionstreu weiter.
+  Verifiziert 1920×1080 → 520×980, 1080×1920 → 760×1432, 1200×640 → 319×602
+  (Ratio konstant 0,531).
+- **Inhalt verschwindet sauber in der Tab-Bar:** Der Ausblend-Verlauf liegt jetzt
+  exakt zwischen Ober- und Unterkante der Leiste (`--bar-h`/`--bar-b`), sodass
+  der Inhalt nicht mehr unter der schwebenden Leiste hervorschaut.
+- **„Über"-Seite entschlackt:** Der Unterzeilen-Hinweis „Tippe auf ein Element …"
+  erscheint nur noch im `Anruf`-Tab, nicht auf `Über`.
+- **Weißer Reload-Flash entfernt:** Inline-`<style>` in `index.html` setzt den
+  dunklen Hintergrund (`#030305`) sofort, bevor das CSS-Bundle lädt.
+- **Tab-Bar-Clipping behoben:** Der Auswahl-Inhalt wurde an der Grid-Zeilenkante
+  zur Tabbar hart abgeschnitten und ragte neben der schmaleren Pillen-Leiste
+  hervor. Die Tabbar schwebt jetzt absolut über der voll-hohen Scrollfläche;
+  der Inhalt scrollt hinter ihr durch und blendet über einen unteren
+  `mask-image`-Verlauf weich aus. Verifiziert bei 390×844 und gerahmt 1280×800.
+  Aktualisiert: **UI-Design**.
+
+## 2026-07-04
+
+- **Spielerische Namen + Materialname wiederhergestellt:** Beim 12-Elemente-Merge
+  hatten 10 der 12 Personas den echten Elementnamen als `name` bekommen und das
+  Feld `elementName` verloren — dadurch zeigte die Identity-Card `undefined` und
+  die „coolen" Namen fehlten (nur Goldina/Kobaltin blieben). Jetzt trägt `name`
+  wieder den spielerischen Namen (Lithia, Indira, Gallia, Silico, Zinnia, Neodya,
+  Dysra, Alumina, Nickelix, Kupfero), `elementName` den echten Materialnamen
+  (Lithium, Indium …); die Intro-Sätze („Ich bin …") wurden an den spielerischen
+  Namen angeglichen. Die `id` bleibt der echte Elementname (klein) als Schlüssel
+  für die Dialoge. Aktualisiert: **Datenmodell**.
+- **Umlaute im „Über"-Panel korrigiert:** ae/oe/ue → ä/ö/ü (Materialität,
+  verständlich, für, Schuldgefühle, Universität, führt, mögliche, spätere,
+  zugänglich) in `src/App.jsx`.
+
+## 2026-07-01
+
+- **Avatar wird nicht mehr abgeschnitten:** Die Avatar-Stage ist jetzt ein
+  Size-Container; der Hero-Avatar deckelt seine Größe auf `72cqh`/`96cqw`
+  (`min(clamp(120px,30vh,330px), 72cqh, 96cqw)`) und skaliert damit zur real
+  verfügbaren Stage-Höhe statt zum Viewport. Verhindert Clipping durch das
+  `overflow: hidden` der Stage, wenn der 6-Fragen-Dock die Höhe verknappt.
+  Verifiziert von 375×812 bis 900×1600. Aktualisiert: **UI-Design**.
+- **Fragebaum entfernt — flache 6-Fragen-Liste:** In `src/data.js` entfielen
+  `initialQuestionIds` und alle `unlocks`; `getInitialQuestions`/
+  `getVisibleQuestions` wurden zu `getQuestions` zusammengefasst. `App.jsx` zeigt
+  jetzt alle sechs Fragen sofort (Zustand `visibleQuestionIds` und Unlock-Merge
+  entfernt). Grund: An einem Touchscreen-Exponat sollen alle Fragen auf einen
+  Blick wählbar sein. Neue **ADR-005** löst **ADR-002** ab; aktualisiert:
+  **Datenmodell**, **Abläufe**, **Anforderungen** (FR-04), **Architektur**,
+  **Überblick**, **UI-Design**.
 
 ## 2026-06-24
 

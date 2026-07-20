@@ -3,7 +3,7 @@ id: architecture
 title: Architektur
 order: 20
 status: current
-last_updated: 2026-06-17
+last_updated: 2026-07-05
 owner: @naim
 linked_paths: src/App.jsx, src/main.jsx, src/data.js, index.html, vite.config.js
 summary: Aufbau der Single-Page-App — Komponentenbaum, Screen-Zustandsmaschine und Web-API-Anbindung.
@@ -20,7 +20,7 @@ flowchart TD
   app --> audio[Web Audio API]
   app --> cam[getUserMedia · Kamera]
   app --> tts[speechSynthesis · TTS]
-  data[(src/data.js · Fragebaum)] --> app
+  data[(src/data.js · Personas + Fragen)] --> app
 ```
 
 ## Container / Module
@@ -57,6 +57,6 @@ siehe [Workflows](#workflows).
 Das *Warum* steht in den [Architekturentscheidungen](#adrs):
 
 - Kein Backend, statische In-App-Daten — ADR-001.
-- Persona-spezifischer Fragebaum mit `unlocks` statt flacher Liste — ADR-002.
+- Flache 6-Fragen-Liste statt Fragebaum — ADR-005 (löst ADR-002 ab).
 - Browser-`speechSynthesis` als optionales, abschaltbares TTS — ADR-003.
 - Fluides, gerätegnostisches Layout statt Fix-auf-1920×1080 — ADR-004.
