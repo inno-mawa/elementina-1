@@ -635,6 +635,12 @@ export function getInitialQuestions(personaId) {
     .filter(Boolean);
 }
 
+export function getQuestions(personaId) {
+  const dialog = getDialog(personaId);
+
+  return Object.values(dialog.questions);
+}
+
 export function getQuestionById(personaId, questionId) {
   return getDialog(personaId).questions[questionId] ?? null;
 }
